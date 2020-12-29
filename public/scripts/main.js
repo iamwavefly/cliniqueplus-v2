@@ -1,16 +1,11 @@
 const navbar = document.getElementById("navbar");
+const user_right_btn = document.getElementById("user_right_btn");
 const leftControl = document.querySelector("#left_btn")
 const rightControl = document.querySelector("#right_btn")
 const testimonySlider = document.querySelector(".testimony_slider")
-window.onscroll = function() {myFunction()};
-const sticky = navbar.offsetTop;
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
+window.addEventListener("scroll", function(){
+  navbar.classList.toggle("navbar", scrollY > 20)
+})
 
 new WOW().init();
 
