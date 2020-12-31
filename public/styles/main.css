@@ -2,6 +2,7 @@
     --primary: rgb(4, 22, 43);
     --secondary: rgb(192, 36, 40);
     --light1: #bbc1ca;
+    --light2: #e9ecf1;
     --dark1: rgb(1, 14, 29);
     --dark2: rgba(25, 58, 95, 0.753);
 }
@@ -26,7 +27,6 @@ html{
 }
 body{
     font-family: 'Raleway', sans-serif;
-    height: 6000px;
 }
 h2{
     color: var(--primary);
@@ -59,6 +59,7 @@ header{
     background-position: left bottom;
 }
 nav{
+    padding: 0 40px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -89,11 +90,12 @@ nav a:hover{
 /* brand logo */
 .logo{
     background-image: url("/images/logo.png");
-    background-size: cover;
-    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
     position: relative;
-    width: 12rem;
-    height: 2rem;
+    width: 14rem;
+    height: 2.5rem;
 }
 /* user button */
 .user_btn{
@@ -549,4 +551,212 @@ nav a:hover{
 .navbar{
     position: fixed !important;
     background-color: var(--primary);
+}
+
+/* --> Register <-- */
+.registration_section{
+    height: 100vh;
+    width: 100%;
+}
+.form_header{
+    height: 40vh;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form_container{
+    border-radius: 10px 10px 0 0 ;
+    height: 80vh;
+    width: 60%;
+    background-color: var(--light2);
+    margin: 0 auto;
+    position: relative;
+    top: -20%;
+    z-index: 9999;
+}
+.form_container form{
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    position: relative;
+}
+.form_container input{
+    width: 100%;
+    padding: 18px 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+.form_container .form_group.file, .form_container input[type="submit"]{
+    width: 100% !important;
+    padding: 10px;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(to right bottom,  rgb(192, 36, 40),  rgb(168, 26, 31));
+    color:var(--light2);
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+.form_container .form_group.file{
+    background: transparent !important;
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+}
+#file{
+    display: none;
+}
+.form_container input::placeholder{
+    color: var(--light1);
+}
+
+/* --> login_section <-- */
+.login_section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+}
+.login_section .form_container{
+    width: 40% !important;
+    height: 40vh;
+    border-radius: 10px;
+}
+.login_section .form_container form{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.form_brand_logo{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    top: 5%;
+    width: 100%;
+}
+.form_brand_logo h2{
+    color: #f3f3f3 !important;
+    justify-content: flex-start;
+}
+.brand_logo{
+    width: 10rem;
+}
+.brand_logo img{
+    width: 100%;
+}
+
+/* --> Dashboard <-- */
+.dashboard_section{
+    display: grid;
+    grid-template-columns: minmax(10rem, 15rem) 1fr;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: auto;
+}
+.sidebar{
+    background-color: var(--primary);
+    width: 100%;
+    height: 100vh;
+}
+.sidebar .nav{
+    margin-top: 30px;
+}
+.sidebar .nav span{
+    color: var(--light1);
+    font-size: 16px;
+}
+.dashboard_header{
+    display: grid;
+    height: 3.5rem;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-content: center;
+    padding: 20px;
+    background-color: var(--light2);
+    border-bottom: 1px solid var(--light1);
+}
+.dashboard_header span{
+    width: 40%;
+}
+.dashboard_header button{
+    margin-left: auto;
+    width: 12%;
+    padding: 10px;
+    background-color: var(--secondary);
+    color: #f1f1f1;
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.26);
+}
+.dashboard_overview{
+    display: grid;
+    grid-template-columns: 1fr 20rem;
+    width: 100%;
+    grid-gap: 20px;
+    position: relative;
+    padding: 0 20px;
+    top: 20px;
+}
+.dashboard_overview div{
+    padding: 20px;
+    border-radius: 10px;
+    /* height: auto; */
+}
+.profile_overview{
+    background-color: var(--primary);
+    height: 23rem;
+}
+.profile_picture{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50% !important;
+    margin: 0 auto;
+    padding: 4px !important;
+    border: 3px solid var(--light1);
+}
+.profile_picture img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.profile_overview h3{
+    color: #f1f1f1;
+    margin: 1.5rem 0 0;
+}
+.profile_overview p{
+    color: #f1f1f1;
+}
+.advert_slider{
+    border: 1px solid red;
+    padding: 20px;
+    height: 12rem;
+}
+.advert_control{
+    height: 100%;
+    display: flex;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+.advert_control i{
+    font-size: 2rem;
+    color: gray;
+    cursor: pointer;
+    padding: 5px;
 }

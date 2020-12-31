@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Trading - Asiaoldmoney</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <div class="registration_section">
+        <div class="form_header">
+            <div class="form_brand_logo">
+                <div class="brand_logo">
+                    <img src="/images/logo.png" alt="">
+                </div>
+            </div>
+        </div>
+        <section class="form_container">
+            <%- include ("./partials/message") %> 
+            <form action="/auth/register" method="POST" enctype="multipart/form-data">
+                <div class="form_group">
+                    <input type="text" name="first_name" placeholder="First Name">
+                </div>
+                <div class="form_group">
+                    <input type="text" name="other_name" placeholder="Other Name">
+                </div>
+                <div class="form_group">
+                    <input type="text" name="username" placeholder="Choose Username">
+                </div>
+                <div class="form_group">
+                    <input type="text" name="home_address" placeholder="Home Address">
+                </div>
+                <div class="form_group">
+                    <input type="text" name="city" placeholder="City">
+                </div>
+                <div class="form_group">
+                    <input type="text" name="state" placeholder="State">
+                </div>
+                <div class="form_group">
+                    <input type="text" name="country" placeholder="Country">
+                </div>
+                <div class="form_group">
+                    <input type="number" name="mobile_number" placeholder="Mobile Number">
+                </div>
+                <div class="form_group">
+                    <input type="email" name="email" placeholder="Email Address">
+                </div>
+                <div class="form_group">
+                    <input type="password" name="password" placeholder="Choose Password">
+                </div>
+                <div class="form_group file">
+                    <input type="file" name="photo" id="file"  accept="image/png, image/jpeg" caption="user" name="profile">
+                    <label for="file" class="file">Choose Photo</label>
+                </div>
+                <div class="form_group">
+                    <input type="submit" value="Start Trading">
+                </div>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
