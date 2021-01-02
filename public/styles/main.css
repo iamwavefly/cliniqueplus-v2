@@ -825,7 +825,10 @@ header{
     width: 95%;
     margin: 0 auto;
     position: relative;
-    top: 5rem;
+    top: 4rem;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
 }
 /* .dashboard_overview{
     display: grid;
