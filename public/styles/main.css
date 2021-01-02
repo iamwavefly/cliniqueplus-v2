@@ -1,6 +1,6 @@
 :root{
     --primary: rgb(4, 22, 43);
-    --secondary: rgb(192, 36, 40);
+    --secondary: #c02428;
     --light1: #bbc1ca;
     --light3: #b2b9c5;
     --light2: #e9ecf1;
@@ -716,7 +716,7 @@ header{
     cursor: pointer;
 }
 .sidebar_nav i{
-    color:   rgba(184, 64, 68, 0.425);
+    color:  rgb(144, 145, 82);
     margin-right: 10px;
 }
 .dashboard_header{
