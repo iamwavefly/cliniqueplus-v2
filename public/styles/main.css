@@ -821,6 +821,12 @@ header{
     font-size: 14px;
     font-weight: 600;
 }
+.chart{
+    width: 95%;
+    margin: 0 auto;
+    position: relative;
+    top: 5rem;
+}
 /* .dashboard_overview{
     display: grid;
     grid-template-columns: 1fr 20rem;
