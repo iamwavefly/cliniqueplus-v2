@@ -2,9 +2,11 @@
     --primary: rgb(4, 22, 43);
     --secondary: rgb(192, 36, 40);
     --light1: #bbc1ca;
+    --light3: #b2b9c5;
     --light2: #e9ecf1;
     --dark1: rgb(1, 14, 29);
-    --dark2: rgba(25, 58, 95, 0.753);
+    --dark2: rgb(34, 37, 48);
+    --dark3: rgb(78, 83, 112);
 }
 ::-webkit-scrollbar{
     width: 10px;
@@ -13,9 +15,6 @@
 ::-webkit-scrollbar-thumb{
     background-color: var(--dark1);
     border-radius: 10px;
-}
-::-webkit-scrollbar-track{
-
 }
 *{
     margin: 0;
@@ -41,7 +40,7 @@ h3{
     font-weight: lighter;
 }
 p{
-    color: var(--dark2);
+    color: var(--dark1);
     font-weight: 500;
     line-height: 1.6rem;
     padding-top: 10px;
@@ -58,7 +57,7 @@ header{
     background-image: linear-gradient(to right bottom, var(--primary), rgba(4, 22, 43, 0.883), rgba(4, 22, 43, 0.192)), url("/images/banner.jpg");
     background-position: left bottom;
 }
-nav{
+#navbar{
     padding: 0 40px;
     display: flex;
     justify-content: space-around;
@@ -70,20 +69,20 @@ nav{
     z-index: 999;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-nav ul{
+#navbar ul{
     display: flex;
     list-style: none;
 }
-nav li{
+#navbar li{
     margin-left: 2rem;
 }
-nav a{
+#navbar a{
     text-decoration: none;
     color: var(--light1);
     font-size: 16px;
     font-weight: 500;
 }
-nav a:hover{
+#navbar a:hover{
     color: var(--secondary);
     transition: all .6s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -548,7 +547,7 @@ nav a:hover{
     color: var(--secondary) !important;
 }
 
-.navbar{
+.js_navbar{
     position: fixed !important;
     background-color: var(--primary);
 }
@@ -661,51 +660,168 @@ nav a:hover{
 /* --> Dashboard <-- */
 .dashboard_section{
     display: grid;
-    grid-template-columns: minmax(10rem, 15rem) 1fr;
+    grid-template-columns: minmax(8rem, 12rem) 1fr;
     justify-content: center;
     align-content: center;
     width: 100%;
-    height: auto;
+    background-color: var(--light2);
 }
 .sidebar{
     background-color: var(--primary);
     width: 100%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
-.sidebar .nav{
-    margin-top: 30px;
+.navbrand_logo{
+    width: 70%;
+    padding: 20px;
+    position: relative;
+    top: 10px;
 }
-.sidebar .nav span{
-    color: var(--light1);
+.navbrand_logo img{
+    width: 100%;
+}
+.sidebar_nav{
+    position: sticky;
+    top: 7rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+}
+.sidebar_nav ul{
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: stretch;
+}
+.sidebar_nav li{
+   list-style: none;
+   height: 100%;
+   position: relative;
+   left: 20px;
+}
+.sidebar_nav a{
+    position: absolute;
+    color: var(--light3) !important;
+    font-weight: 500;
     font-size: 16px;
+    text-decoration: none;
+
+    cursor: pointer;
+}
+.sidebar_nav i{
+    color:   rgba(184, 64, 68, 0.425);
+    margin-right: 10px;
 }
 .dashboard_header{
     display: grid;
     height: 3.5rem;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
     align-content: center;
-    padding: 20px;
-    background-color: var(--light2);
+    padding: 0 40px;
+    background-color: #ffffff;
     border-bottom: 1px solid var(--light1);
 }
-.dashboard_header span{
-    width: 40%;
+.dashboard_header h3{
+    color: var(--dark2);
+    margin: auto 0;
 }
-.dashboard_header button{
+.right_header-dashboard{
+    display: flex;
     margin-left: auto;
-    width: 12%;
-    padding: 10px;
-    background-color: var(--secondary);
-    color: #f1f1f1;
-    border-radius: 5px;
-    border: none;
-    font-weight: 500;
-    cursor: pointer;
-
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.26);
 }
-.dashboard_overview{
+.right_header-dashboard button{
+    margin: auto 0;
+    margin-right: 10px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    padding: 0px 10px !important;
+    height: 30px;
+    cursor: pointer;
+    color: var(--dark3);
+    font-weight:600;
+    font-size: 12px;
+}
+.header_avatar{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--light1);
+}
+.header_avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.account_overview{
+    display: grid;
+    grid-template-columns: repeat(4, calc(100% / 4));
+    grid-gap: 10px;
+    position: relative;
+    top: 3rem;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 50px;
+    margin: 0 auto;
+    width: 100%;
+    height: 8rem;
+}
+.user_flash{
+    position: relative;
+    left: 30px;
+    top: 30px;
+    color: var(--dark3);
+    font-size: 16px;
+    display: inline-block;
+}
+.account_overview > div{
+    background-color: #ffffff;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-around;
+    align-items: center;
+
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.055);
+}
+.account_overview .icon{
+    background-color: var(--light2);
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.account_overview .icon i{
+    font-size: 16px;
+}
+.account_overview .details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.account_overview .details h3{
+    font-size: 22px;
+    color: var(--dark2);
+}
+.account_overview .details span{
+    color: var(--dark3);
+    font-size: 14px;
+    font-weight: 600;
+}
+/* .dashboard_overview{
     display: grid;
     grid-template-columns: 1fr 20rem;
     width: 100%;
@@ -717,9 +833,9 @@ nav a:hover{
 .dashboard_overview div{
     padding: 20px;
     border-radius: 10px;
-    /* height: auto; */
-}
-.profile_overview{
+    height: auto;
+} */
+/* .profile_overview{
     background-color: var(--primary);
     height: 23rem;
 }
@@ -759,4 +875,4 @@ nav a:hover{
     color: gray;
     cursor: pointer;
     padding: 5px;
-}
+} */

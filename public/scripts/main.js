@@ -4,7 +4,7 @@ const leftControl = document.querySelector("#left_btn")
 const rightControl = document.querySelector("#right_btn")
 const testimonySlider = document.querySelector(".testimony_slider")
 window.addEventListener("scroll", function(){
-  navbar.classList.toggle("navbar", scrollY > 20)
+  navbar.classList.toggle("js_navbar", scrollY > 20)
 })
 
 new WOW().init();
