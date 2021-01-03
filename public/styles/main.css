@@ -9,7 +9,7 @@
     --dark1: rgb(1, 14, 29);
     --dark2: rgb(34, 37, 48);
     --dark3: rgb(78, 83, 112);
-    --dark4:rgba(0, 0, 0, 0.514);
+    --dark4:rgba(0, 0, 0, 0.144);
 }
 ::-webkit-scrollbar{
     width: 10px;
@@ -663,11 +663,11 @@ header{
 /* --> Dashboard <-- */
 .dashboard_section{
     display: grid;
-    grid-template-columns: minmax(8rem, 12rem) 1fr;
+    grid-template-columns: minmax(10rem, 14rem) 1fr;
     justify-content: center;
     align-content: center;
     width: 100%;
-    background-color: var(--light2);
+    background-color: rgb(236, 236, 236);
 }
 .sidebar{
     background-image: linear-gradient(to right bottom, var(--primary),  rgb(3, 19, 37));
@@ -677,18 +677,18 @@ header{
     flex-direction: column;
 }
 .navbrand_logo{
-    width: 85%;
+    width: 100%;
     padding: 20px;
     position: relative;
     top: 10px;
     border-bottom: 1px solid var(--dark4);
 }
 .navbrand_logo img{
-    width: 100%;
+    width: 68%;
 }
 .sidebar_nav{
     position: sticky;
-    top: 7rem;
+    top: 85px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -742,7 +742,7 @@ header{
     position: absolute !important;
     bottom: 0%;
     left: 0%;
-    width: 12rem;
+    width: 14rem;
     background-color: var(--dark4);
     box-shadow: 0 -10px 10px rgba(255, 255, 255, 0.014);
     transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -766,18 +766,24 @@ header{
     justify-content: space-between;
     align-content: center;
     padding: 0 40px;
-    background-color: #ffffff;
+    background-color: #fafafa;
     border-bottom: 1px solid var(--light1);
+    -webkit-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.178);
+    -moz-box-shadow: 0 10px 6px -6px  rgba(0, 0, 0, 0.178);
+         box-shadow: 0 10px 6px -6px  rgba(0, 0, 0, 0.178);
 }
 .dashboard_header h3{
-    color: var(--dark2);
+    color: var(--dark3);
+    font-weight: 600;
+    font-size: 16px;
     margin: auto 0;
 }
 .right_header-dashboard{
     display: flex;
+    align-items: center;
     margin-left: auto;
 }
-.right_header-dashboard button{
+.right_header-dashboard button, .dashboard_icon{
     margin: auto 0;
     margin-right: 10px;
     outline: none;
@@ -790,12 +796,24 @@ header{
     font-weight:600;
     font-size: 12px;
 }
+.display_name{
+    height: 100%;
+    position: relative;
+    border-left: 1px solid var(--dark4);
+}
+.display_name > p{
+    position: relative;
+    font-size: 14px;
+    padding: 10px !important;
+    color: var(--dark3);
+    font-weight: 600;
+}
 .header_avatar{
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid var(--light1);
+    border: 3px solid rgba(0, 0, 0, 0.082);
 }
 .header_avatar img{
     width: 100%;
@@ -824,21 +842,35 @@ header{
     display: inline-block;
 }
 .account_overview > div{
-    background-color: #ffffff;
+    background-color: #fafafa;
     height: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-around;
     align-items: center;
-
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.055);
+    -webkit-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.096);
+    -moz-box-shadow: 0 10px 6px -6px  rgba(0, 0, 0, 0.096);
+         box-shadow: 0 10px 6px -6px  rgba(0, 0, 0, 0.096);
     cursor: pointer;
     transition: all 0.6s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+.account_overview > div:nth-child(1){
+    border-left: 4px solid var(--primary);
+}
+.account_overview > div:nth-child(2){
+    border-left: 4px solid  #f0b938;
+}
+.account_overview > div:nth-child(3){
+    border-left: 4px solid   rgba(192, 36, 41, 0.856);
+}
+.account_overview > div:nth-child(4){
+    border-left: 4px solid rgba(40, 173, 0, 0.836);
 }
 .account_overview > div:hover{
     position: relative;
     top: -5px;
+    box-shadow: none;
 }
 .account_overview .icon{
     background-color: var(--light2);
@@ -869,13 +901,21 @@ header{
 }
 .chart{
     width: 95%;
+    height: 22rem;
     margin: 0 auto;
     position: relative;
-    top: 4rem;
+    top: 3rem;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 5px;
+    -webkit-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.178);
+    -moz-box-shadow: 0 10px 6px -6px  rgba(0, 0, 0, 0.178);
+         box-shadow: 0 10px 6px -6px  rgba(0, 0, 0, 0.178);
 }
+.ct-chart{
+    height: 100%; 
+}
+
 .chart_title h3{
     position: relative;
     left: 50%;
@@ -900,14 +940,14 @@ header{
     transform: translateY(-0%);
 }
 .toast.toast-anim{
-    transform: translateY(550%) rotateZ(-90deg) ;
+    transform: translateY(600%) rotateZ(-90deg) ;
 }
 .toast p{
     color: var(--light2);
     font-size: 14px;
 }
 .toast a{
-    color: var(--primary);
+    color: var(--light2);
     text-decoration: none;
     font-weight: 600;
 }

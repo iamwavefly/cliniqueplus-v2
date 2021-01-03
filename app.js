@@ -54,7 +54,9 @@ app.use((req, res, next) => {
 // index route
 app.use("/auth", userRouter)
 app.get("/", (req, res) => {
-    res.render("index")
+    res.render("index", {
+        layout: false
+    })
 })
 // port
 const PORT = process.env.PORT || 3000

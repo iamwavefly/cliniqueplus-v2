@@ -1,47 +1,47 @@
 <h3 class="user_flash">Welcome <%= user.username %></h3>
 <div class="account_overview">
     <div class="transaction_count">
-        <div class="icon" style="background-color: rgba(0, 60, 255, 0.048);">
-            <i class="fas fa-business-time" style="color: rgba(0, 48, 204, 0.692);"></i>
+        <div class="icon" style="background-color:rgba(4, 22, 43, 0.123);">
+            <i class="fas fa-business-time" style="color: rgba(4, 22, 43, 0.884)"></i>
         </div>
         <div class="details">
-            <h3>0/100</h3>
+            <h3 style="color: rgba(4, 22, 43, 0.884)">0/100</h3>
             <span>Deal Count</span>
         </div>
     </div>
     <div class="transaction_pending">
         <div class="icon" style="background-color: rgba(255, 217, 0, 0.144);">
-            <i class="fas fa-clock" style="color: rgb(255, 218, 8);"></i>
+            <i class="fas fa-clock" style="color:#f0b938;"></i>
         </div>
         <div class="details">
-            <h3>0/100</h3>
+            <h3 style="color:#f0b938;">0/100</h3>
             <span>Deal Pending</span>
         </div>
     </div>
     <div class="transaction_cancel">
         <div class="icon" style="background-color: rgba(255, 0, 0, 0.048);">
-            <i class="fas fa-calendar-times" style="color: rgba(182, 2, 2, 0.678);"></i>
+            <i class="fas fa-calendar-times" style="color: rgba(192, 36, 41, 0.856)"></i>
         </div>
         <div class="details">
-            <h3>0/100</h3>
+            <h3 style="color: rgba(192, 36, 41, 0.856)">0/100</h3>
             <span>Deal Error</span>
         </div>
     </div>
     <div class="transaction_approved" >
         <div class="icon" style="background-color: rgba(60, 255, 0, 0.048);">
-            <i class="fas fa-check" style="color: rgb(47, 202, 0);"></i>
+            <i class="fas fa-check" style="color: rgba(40, 173, 0, 0.836)"></i>
         </div>
         <div class="details">
-            <h3>0/100</h3>
+            <h3 style="color: rgba(40, 173, 0, 0.836)">0/100</h3>
             <span>Deal Approved</span>
         </div>
     </div>
 </div>
 <div class="chart">
     <div class="chart_title">
-        <h3>Deals Overview</h3>
+        <h3>WCC Market Trends</h3>
     </div>
-    <canvas id="myChart" width="400" height="100"></canvas>
+    <div class="ct-chart"></div>
 </div>
 <!-- <div class="user_overview">
     <div class="advert_slider">

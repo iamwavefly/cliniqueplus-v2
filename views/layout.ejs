@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="/styles/main.css">
     <script src="https://kit.fontawesome.com/bbe5d49f9d.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 
 </head>
 <body>
@@ -34,12 +35,14 @@
         
         <main class="main">
             <div class="dashboard_header">
-                <h3>Seller Dashboard</h3>
+                <h3><button class="dashboard_icon"><i class="fas fa-tools"></i></button>Dashboard</h3>
                 <div class="right_header-dashboard">
-                    <% const status = "pending" %>
-                    <button class="header_btn">Feedback</button>
+                    <button class="header_btn"><i class="fas fa-bell"></i></button>
                     <button class="header_btn"><i class="fas fa-envelope"></i></button>
                     <button style="color:green;" class="header_btn"><i class="fas fa-question"></i></button>
+                    <div class="display_name">
+                        <p><%= user.first_name + " " + user.other_name %></p>
+                    </div>
                     <div class="header_avatar">
                         <img src="/users/<%= user.photo %>" alt="" srcset="">
                     </div>
@@ -59,56 +62,31 @@
 
     </footer>
     <script>
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-                datasets: [
-                    {
-                    label: '# of Deal',
-                    data: [1,0,0,0,0,0,0,0,0,0,0,0],
-                    backgroundColor: [
-                        'rgba(0, 48, 204, 0.2)',
-                    ],
-                },
-                {
-                    label: '# of Pending Deal',
-                    data: [1,0,0,0,0,0,0,0,0,0,0,0],
-                    backgroundColor: [
-                        'rgba(251, 255, 0, 0.2)',
-                    ],
-                },
-                {
-                    label: '# of Cancel Deal',
-                    data: [0,0,0,0,0,0,0,0,0,0,0,0],
-                    backgroundColor: [
-                        ' rgba(182, 2, 2, 0.678)',
-                    ],
-                },
-                {
-                    label: '# of Approved Deal',
-                    data: [0,0,0,0,0,0,0,0,0,0,0,0],
-                    backgroundColor: [
-                        ' rgba(47, 202, 0,0.2)',
-                    ],
-                },
-            ]
+        const data = {
+        labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        series: [
+            [1, 10, 0, 0, 20, 0, 0, 30, 0, 40, 0, 0],
+            [0, 0, 40, 0, 0, 50, 0, 0, 60, 0, 0, 0],
+            [0, 0, 0, 0, 40, 0, 0, 0, 0, 40, 0, 0],
+            [0, 0, 20,20, 30, 0, 20, 0, 0, 30, 0, 10],
+            [0, 0, 20, 0, 20, 0, 10, 0, 0, 30, 0, 0],
+            [0, 0, 20, 30, 0, 0, 50, 0, 0, 30, 0, 20],
+        ]
+        }
+        const options = {
+            showArea: true,
+            showLine: false,
+            // showPoint: false,
+            fullWidth: true,
+            axisX: {
+                showLabel: true,
+                showGrid: true
             },
-            options: {
-                responsive: true, // Instruct chart js to respond nicely.
-                legend: {
-                    display: false
-                },
-                // title: {
-                //     display: true,
-                //     text: "Deals Demonstration Chart",
-                //     fontSize: 14,
-                //     fontFamily: "Helvetica",
-                //     fontColor: "rgb(78, 83, 112)"
-                // }
-            }
-        });
+            seriesBarDistance: 15,
+            strokeWidth: 1
+        }
+        
+        new Chartist.Line(".ct-chart", data, options)
     </script>
      <script src="/scripts/dashboard.js"></script>
 </body>
