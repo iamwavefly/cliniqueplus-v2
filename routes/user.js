@@ -13,7 +13,9 @@ router.get("/register", (req, res) => {
     res.render("register")
 })
 router.get("/login", (req, res) => {
-    res.render("login")
+    res.render("login", {
+        layout: false
+    })
 })
 function myAuth(req, res, next) {
     passport.authenticate('local', { 
@@ -62,7 +64,7 @@ router.post("/login", (req, res) => {
     })
 })
 router.get("/dashboard", (req, res) => {
-    res.render("dashboard", {
+    res.render("main", {
         user: req.user
     })
 })

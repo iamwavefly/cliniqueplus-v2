@@ -1,0 +1,103 @@
+<h3 class="user_flash">Welcome, <%= user.username %></h3>
+<div class="account_overview">
+    <div class="transaction_count">
+        <div class="icon" style="background-color: rgba(0, 60, 255, 0.048);">
+            <i class="fas fa-business-time" style="color: rgba(0, 48, 204, 0.692);"></i>
+        </div>
+        <div class="details">
+            <h3>0/100</h3>
+            <span>Deal Count</span>
+        </div>
+    </div>
+    <div class="transaction_pending">
+        <div class="icon" style="background-color: rgba(255, 217, 0, 0.144);">
+            <i class="fas fa-clock" style="color: rgb(255, 218, 8);"></i>
+        </div>
+        <div class="details">
+            <h3>0/100</h3>
+            <span>Deal Pending</span>
+        </div>
+    </div>
+    <div class="transaction_cancel">
+        <div class="icon" style="background-color: rgba(255, 0, 0, 0.048);">
+            <i class="fas fa-calendar-times" style="color: rgba(182, 2, 2, 0.678);"></i>
+        </div>
+        <div class="details">
+            <h3>0/100</h3>
+            <span>Deal Error</span>
+        </div>
+    </div>
+    <div class="transaction_approved" >
+        <div class="icon" style="background-color: rgba(60, 255, 0, 0.048);">
+            <i class="fas fa-check" style="color: rgb(47, 202, 0);"></i>
+        </div>
+        <div class="details">
+            <h3>0/100</h3>
+            <span>Deal Approved</span>
+        </div>
+    </div>
+</div>
+<div class="chart">
+    <div class="chart_title">
+        <h3>Deals Overview</h3>
+    </div>
+    <canvas id="myChart" width="400" height="100"></canvas>
+</div>
+<!-- <div class="user_overview">
+    <div class="advert_slider">
+        <div class="advert_control">
+            <i class="fas fa-chevron-left"></i>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
+    <div class="deal_term">
+        <div class="header">
+            <h2>Our Terms Of Trading</h2>
+            <span>Here are the necessary process to trade your old coin, old note, old stamp and old antique overseas with us.</span>
+        </div>
+        <ul class="steps">
+        <div class="step_1">
+            <img src="/users/<%= user.photo %>" alt="">
+            <li>
+                We ask the seller to snap and show us all the old coin, old note, old stamp and old antique they have available for sale to make a deal.
+            </li>
+        </div>
+        <div class="step_2">
+            <img src="/users/<%= user.photo %>" alt="">
+            <li>
+                We scan the available items the seller have for sale and offer them their valued price according to our company updated price list.
+            </li>
+        </div>
+        <div class="step_3">
+            <img src="/users/<%= user.photo %>" alt="">
+            <li>
+                We refer the seller to the international Neumastic (currency)/antique licencing page powered by United Nations (UN) to purchase their liecence to trade their old coin, old note, old stamp and old antique globally. Once the seller have their licence purchased, we can now proceed on the transaction process
+            </li>
+        </div>
+        <div class="step_4">
+            <img src="/users/<%= user.photo %>" alt="">
+            <li>
+                This is to inform all our newly registered customers that we only transact through one international bank in-charge of all countries central bank and Neumastic (currency)/antique trading globally. Therefore, we refer all our licenced customers to create an international (usd) account with this bank for our transaction to be successful. The advantages of having this international bank account is that you can receive any amount from any country and also withdraw them directly to your local bank account in your local currency at any time. After that, the seller have to provide their new international (usd) account details to receive our payment.
+                <p>Here are the information we need to make an international transfer to their account below.</p>
+                (a) Bank Name
+                (b) Account Name
+                (c) Account Number/ID
+                (d) Routing Number
+                (e) Mobile Number
+                (f) Email Address
+            </li>
+        </div>
+    </ul>
+    </div>
+</div>
+<div class="profile_overview">
+    <div class="profile_picture">
+        <img src="/users/<%= user.photo %>" alt="">
+        <h3>User Full Name</h3>
+        <p>samson@gmail.com</p>
+        <div class="view_profile">
+            <i class="fas fa-eye"></i><br>
+            <span>View Profile</span>
+        </div>
+    </div>
+</div> -->

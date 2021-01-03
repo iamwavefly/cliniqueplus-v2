@@ -5,6 +5,7 @@ const mongoose = require("mongoose")
 const userRouter = require("./routes/user")
 const flash = require("connect-flash")
 const session = require("express-session")
+const layouts = require("express-ejs-layouts")
 // connect to db
 const options = {
     useNewUrlParser: true,
@@ -23,6 +24,7 @@ const app = express()
 app.set("view engine", "ejs")
 app.use(express.static("public"))
 app.use(express.urlencoded({extended: false}))
+app.use(layouts)
 // express session
 app.use(session({
     secret: "call me to know",

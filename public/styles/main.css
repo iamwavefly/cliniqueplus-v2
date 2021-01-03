@@ -1,12 +1,15 @@
 :root{
     --primary: rgb(4, 22, 43);
     --secondary: #c02428;
+    --secondary-light: rgba(192, 36, 41, 0.493);
+    --dashboard-cr: rgb(133, 134, 73);
     --light1: #bbc1ca;
-    --light3: #b2b9c5;
     --light2: #e9ecf1;
+    --light3: #b2b9c5;
     --dark1: rgb(1, 14, 29);
     --dark2: rgb(34, 37, 48);
     --dark3: rgb(78, 83, 112);
+    --dark4:rgba(0, 0, 0, 0.144);
 }
 ::-webkit-scrollbar{
     width: 10px;
@@ -667,17 +670,18 @@ header{
     background-color: var(--light2);
 }
 .sidebar{
-    background-color: var(--primary);
+    background-image: linear-gradient(to right bottom, var(--primary),  rgb(3, 19, 37));
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
 .navbrand_logo{
-    width: 70%;
+    width: 85%;
     padding: 20px;
     position: relative;
     top: 10px;
+    border-bottom: 1px solid var(--dark4);
 }
 .navbrand_logo img{
     width: 100%;
@@ -691,6 +695,7 @@ header{
     justify-content: center;
     align-items: center;
     height: 20rem;
+    overflow: hidden;
 }
 .sidebar_nav ul{
     width: 100% !important;
@@ -704,20 +709,55 @@ header{
    list-style: none;
    height: 100%;
    position: relative;
-   left: 20px;
+   height: 50px;
+   border-bottom: 1px solid var(--dark4);
+   display: flex;
+   padding-left: 20px;
+    align-items: center;
 }
-.sidebar_nav a{
-    position: absolute;
+.sidebar_nav li.active{
+    background-color: var(--dark4);
+}
+.sidebar_nav li:hover{
+    margin-left: 5px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: var(--secondary-light);
+}
+.sidebar_nav a:hover{
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: var(--secondary) !important;
+}
+.sidebar_nav a, .sidebar_chat a{
     color: var(--light3) !important;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 15px;
     text-decoration: none;
-
     cursor: pointer;
 }
-.sidebar_nav i{
-    color:  rgb(144, 145, 82);
+.sidebar_nav i, .sidebar_chat i{
+    color:  rgba(119, 119, 119, 0.151);
     margin-right: 10px;
+}
+.sidebar_chat{
+    position: absolute !important;
+    bottom: 0%;
+    left: 0%;
+    width: 12rem;
+    background-color: var(--dark4);
+    box-shadow: 0 -10px 10px rgba(255, 255, 255, 0.014);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.sidebar_chat:hover{
+    box-shadow:  none;
+}
+.sidebar_chat a{
+    height: 40px;
+    width: 100%;
+    list-style: none;
+    position: relative;
+    left: 20px;
+    display: flex;
+    align-items: center;
 }
 .dashboard_header{
     display: grid;
@@ -755,7 +795,7 @@ header{
     height: 2.5rem;
     border-radius: 50%;
     overflow: hidden;
-    border: 2px solid var(--light1);
+    border: 3px solid var(--light1);
 }
 .header_avatar img{
     width: 100%;
@@ -793,6 +833,12 @@ header{
 
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.055);
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+.account_overview > div:hover{
+    position: relative;
+    top: -5px;
 }
 .account_overview .icon{
     background-color: var(--light2);
@@ -830,58 +876,12 @@ header{
     padding: 20px;
     border-radius: 5px;
 }
-/* .dashboard_overview{
-    display: grid;
-    grid-template-columns: 1fr 20rem;
-    width: 100%;
-    grid-gap: 20px;
+.chart_title h3{
     position: relative;
-    padding: 0 20px;
-    top: 20px;
+    left: 50%;
+    top: -5px;
+    transform: translateX(-50%);
+    color: var(--dark3);
+    font-size: 15px;
+    display: inline-block;
 }
-.dashboard_overview div{
-    padding: 20px;
-    border-radius: 10px;
-    height: auto;
-} */
-/* .profile_overview{
-    background-color: var(--primary);
-    height: 23rem;
-}
-.profile_picture{
-    width: 8rem;
-    height: 8rem;
-    border-radius: 50% !important;
-    margin: 0 auto;
-    padding: 4px !important;
-    border: 3px solid var(--light1);
-}
-.profile_picture img{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-.profile_overview h3{
-    color: #f1f1f1;
-    margin: 1.5rem 0 0;
-}
-.profile_overview p{
-    color: #f1f1f1;
-}
-.advert_slider{
-    border: 1px solid red;
-    padding: 20px;
-    height: 12rem;
-}
-.advert_control{
-    height: 100%;
-    display: flex;
-    align-items: center !important;
-    justify-content: space-between !important;
-}
-.advert_control i{
-    font-size: 2rem;
-    color: gray;
-    cursor: pointer;
-    padding: 5px;
-} */
