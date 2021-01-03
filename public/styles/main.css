@@ -9,7 +9,7 @@
     --dark1: rgb(1, 14, 29);
     --dark2: rgb(34, 37, 48);
     --dark3: rgb(78, 83, 112);
-    --dark4:rgba(0, 0, 0, 0.144);
+    --dark4:rgba(0, 0, 0, 0.514);
 }
 ::-webkit-scrollbar{
     width: 10px;
@@ -884,4 +884,30 @@ header{
     color: var(--dark3);
     font-size: 15px;
     display: inline-block;
+}
+.toast{
+    position: fixed;
+    right: 0%;
+    bottom: 0%;
+    width: auto;
+    padding: 5px 20px;
+    background-color: var(--secondary);
+    border-radius: 5px;
+    transition: all .4s ease-in;
+    transform: translateY(100%);
+}
+.toast.toast-show{
+    transform: translateY(-0%);
+}
+.toast.toast-anim{
+    transform: translateY(550%) rotateZ(-90deg) ;
+}
+.toast p{
+    color: var(--light2);
+    font-size: 14px;
+}
+.toast a{
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
 }

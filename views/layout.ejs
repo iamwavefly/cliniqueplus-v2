@@ -18,17 +18,17 @@
             </div>
             <nav class="sidebar_nav">
                 <ul>
-                    <li class="active"><i class="fas fa-user"></i><a href="#">Overview</a></li>
-                    <li><i class="fas fa-clipboard-check"></i><a href="#">Approval Center</a></li>
-                    <li><i class="fas fa-toggle-off"></i><a href="#">Account Status</a></li>
-                    <li><i class="fas fa-user"></i><a href="#">Profile</a></li>
-                    <li><i class="fas fa-bell"></i><a href="#">Notification</a></li>
-                    <li><i class="fas fa-user-cog"></i><a href="#">Settings</a></li>
-                    <li><i class="fas fa-sign-out-alt"></i><a href="#">Logout</a></li>
+                    <li id="sidebar_nav" class="active"><i class="fas fa-user"></i><a href="#">Overview</a></li>
+                    <li id="sidebar_nav"><i class="fas fa-clipboard-check"></i><a href="#">Approval Center</a></li>
+                    <li id="sidebar_nav"><i class="fas fa-toggle-off"></i><a href="#">Account Status</a></li>
+                    <li id="sidebar_nav"><i class="fas fa-user"></i><a href="#">Profile</a></li>
+                    <li id="sidebar_nav"><i class="fas fa-bell"></i><a href="#">Notification</a></li>
+                    <li id="sidebar_nav"><i class="fas fa-user-cog"></i><a href="#">Settings</a></li>
+                    <li id="sidebar_nav"><i class="fas fa-sign-out-alt"></i><a href="#">Logout</a></li>
                 </ul>
             </nav>   
             <div class="sidebar_chat">
-                <a href="#"><li class="chat"><i class="fas fa-bell"></i>Chat Us</li></a>
+                <a href="#"><li class="chat"><i class="fas fa-comment"></i>Chat Us</li></a>
             </div>       
         </section>
         
@@ -50,11 +50,14 @@
             </div>
         </main>
     </div>
+
+    <div id="toast" class="toast">
+        <p>Hello <%= user.username %>, if you have any issue, please chat us <i class="fas fa-comment"></i> <a href="#">here</a></p>
+    </div>
+
     <footer class="footer">
 
     </footer>
-
-
     <script>
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
@@ -107,5 +110,6 @@
             }
         });
     </script>
+     <script src="/scripts/dashboard.js"></script>
 </body>
 </html>
