@@ -10,6 +10,7 @@
     --dark2: rgb(34, 37, 48);
     --dark3: rgb(78, 83, 112);
     --dark4:rgba(0, 0, 0, 0.144);
+    --shadow-inset: 0 0 10px rgba(0, 0, 0, 0.185) inset;
 }
 ::-webkit-scrollbar{
     width: 10px;
@@ -663,7 +664,7 @@ header{
 /* --> Dashboard <-- */
 .dashboard_section{
     display: grid;
-    grid-template-columns: minmax(10rem, 14rem) 1fr;
+    grid-template-columns: auto 1fr;
     justify-content: center;
     align-content: center;
     width: 100%;
@@ -671,20 +672,47 @@ header{
 }
 .sidebar{
     background-image: linear-gradient(to right bottom, var(--primary),  rgb(3, 19, 37));
-    width: 100%;
+    width: 60px;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    transition: all 0.2s ease-in;
+}
+.sidebar:hover{
+    width: 14rem;
+}
+.sidebar:hover .navbrand_logo > .tagname{
+    visibility: visible;
+}
+.sidebar:hover .navbrand_logo > .tagname{
+    visibility: visible;
+}
+.sidebar:hover .sidebar_nav a, .sidebar_chat a{
+    visibility: visible;
 }
 .navbrand_logo{
-    width: 100%;
-    padding: 20px;
+    width: 14rem;
+    height: 60px;
+    padding: 10px;
     position: relative;
     top: 10px;
-    border-bottom: 1px solid var(--dark4);
+    display: grid;
+    grid-template-columns: 4rem 1fr;
 }
-.navbrand_logo img{
-    width: 68%;
+.navbrand_logo > .favicon{
+    background-image: url("/images/favicon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+.navbrand_logo > .tagname{
+    background-image: url("/images/tagname.png");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: left;
+    position: relative;
+    left: -10px;
+    visibility: hidden;
 }
 .sidebar_nav{
     position: sticky;
@@ -696,6 +724,8 @@ header{
     align-items: center;
     height: 20rem;
     overflow: hidden;
+
+    transition: all 0.4s ease-in;
 }
 .sidebar_nav ul{
     width: 100% !important;
@@ -730,13 +760,15 @@ header{
 .sidebar_nav a, .sidebar_chat a{
     color: var(--light3) !important;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 16px;
     text-decoration: none;
     cursor: pointer;
+    visibility: hidden;
 }
 .sidebar_nav i, .sidebar_chat i{
-    color:  rgba(119, 119, 119, 0.151);
-    margin-right: 10px;
+    color:  var(--light3);
+    margin-right: 30px;
+    font-size: 18px;
 }
 .sidebar_chat{
     position: absolute !important;
@@ -762,11 +794,11 @@ header{
 .dashboard_header{
     display: grid;
     height: 3.5rem;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 12rem 1fr 1fr;
     justify-content: space-between;
     align-content: center;
     padding: 0 40px;
-    background-color: #fafafa;
+    background-image: linear-gradient(to bottom, #fafafa, #eeeeee);
     border-bottom: 1px solid var(--light1);
     -webkit-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.178);
     -moz-box-shadow: 0 10px 6px -6px  rgba(0, 0, 0, 0.178);
@@ -777,6 +809,31 @@ header{
     font-weight: 600;
     font-size: 16px;
     margin: auto 0;
+}
+.header_search{
+    width: 100%;
+    height: 90%;
+    position: relative;
+}
+.header_search > input{
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--dark4);
+    outline: none;
+    padding: 0 35px;
+    box-shadow: 0 0 10xpx rgba(0, 0, 0, 0.185) inset;
+    color: var(--dark3);
+}
+.header_search > input::placeholder{
+    color: rgba(1, 14, 29, 0.432);
+}
+.header_search > i{
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    color: rgba(1, 14, 29, 0.432);
+    font-size: 14px;
+    transform: translate(-50%, -50%);
 }
 .right_header-dashboard{
     display: flex;
@@ -820,26 +877,38 @@ header{
     height: 100%;
     object-fit: cover;
 }
+.dashboard_main{
+    border: 1px solid var(--light1);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    grid-template-rows: 60px 110px 1fr;
+    align-items: center;
+}
 .account_overview{
     display: grid;
     grid-template-columns: repeat(4, calc(100% / 4));
     grid-gap: 10px;
     position: relative;
-    top: 3rem;
+    /* top: 3rem; */
     justify-content: center;
     align-items: center;
     padding: 10px 50px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     width: 100%;
-    height: 8rem;
+    height: 100%;
+}
+.dashboard_overview{
+    width: 100%;
+    height: 35rem;
 }
 .user_flash{
     position: relative;
     left: 30px;
-    top: 30px;
     color: var(--dark3);
     font-size: 16px;
-    display: inline-block;
+    width: 50%;
 }
 .account_overview > div{
     background-color: #fafafa;
@@ -904,7 +973,6 @@ header{
     height: 22rem;
     margin: 0 auto;
     position: relative;
-    top: 3rem;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 5px;
@@ -950,4 +1018,45 @@ header{
     color: var(--light2);
     text-decoration: none;
     font-weight: 600;
+}
+
+/* [-----------PROFILE SECTION---------------] */
+.profile_container{
+    position: relative;
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-gap: 10px;
+}
+.profile_container > div{
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.profile_avatar{
+    width: 100%;
+    height: 80px;
+    background-color: var(--light2);
+    position: relative;
+}
+.avatar_container{
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--light2);
+    overflow: hidden;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+}
+.avatar_container img{
+    object-fit: cover;
+    width: 100%;
 }

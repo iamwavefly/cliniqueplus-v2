@@ -10,7 +10,9 @@ const storage = multer.memoryStorage()
 const photo = multer({storage: storage})
 
 router.get("/register", (req, res) => {
-    res.render("register")
+    res.render("register", {
+        layout: false
+    })
 })
 router.get("/login", (req, res) => {
     res.render("login", {
@@ -65,6 +67,11 @@ router.post("/login", (req, res) => {
 })
 router.get("/dashboard", (req, res) => {
     res.render("main", {
+        user: req.user
+    })
+})
+router.get("/profile", (req, res) => {
+    res.render("profile", {
         user: req.user
     })
 })
