@@ -19,7 +19,10 @@ const options = {
     family: 4, // Use IPv4, skip trying IPv6
     keepAlive: true
 }
-mongoose.connect("mongodb+srv://wayfly:wayfly123@cluster0-tqqou.mongodb.net/wccc?retryWrites=true&w=majority", options)
+mongoose.connect("mongodb+srv://wayfly:wayfly123@cluster0-tqqou.mongodb.net/wccc?retryWrites=true&w=majority", options, (err)=> {
+    if(err) console.log(err);
+    console.log("mongodb connected");
+})
 // init app
 const app = express()
 app.set("view engine", "ejs")
@@ -56,6 +59,15 @@ app.use("/auth", userRouter)
 app.get("/", (req, res) => {
     res.render("index", {
         layout: false
+    })
+})
+
+// 404 page
+app.use("*", (req, res) => {
+    res.render("404", {
+        layout: false,
+        user: req.user,
+        title: "Sorry, page not found."
     })
 })
 // port

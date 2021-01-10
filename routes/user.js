@@ -5,6 +5,7 @@ const passport = require("passport")
 const userSchema = require("../Models/User")
 const passwordLocalMongoose = require("passport-local-mongoose")
 const router = express.Router()
+const auth_passport = require("../Auths/passport")
 
 const storage = multer.memoryStorage()
 const photo = multer({storage: storage})
@@ -65,8 +66,13 @@ router.post("/login", (req, res) => {
         })
     })
 })
-router.get("/dashboard", (req, res) => {
+router.get("/dashboard", auth_passport, (req, res) => {
     res.render("main", {
+        user: req.user
+    })
+})
+router.get("/approval-center", auth_passport, (req, res) => {
+    res.render("approval", {
         user: req.user
     })
 })

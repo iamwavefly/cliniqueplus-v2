@@ -1,5 +1,5 @@
 :root{
-    --primary: rgb(4, 22, 43);
+    --primary: #24292e;
     --secondary: #c02428;
     --secondary-light: rgba(192, 36, 41, 0.493);
     --dashboard-cr: rgb(133, 134, 73);
@@ -9,7 +9,7 @@
     --dark1: rgb(1, 14, 29);
     --dark2: rgb(34, 37, 48);
     --dark3: rgb(78, 83, 112);
-    --dark4:rgba(0, 0, 0, 0.144);
+    --dark4:rgba(0, 0, 0, 0.096);
     --shadow-inset: 0 0 10px rgba(0, 0, 0, 0.185) inset;
 }
 ::-webkit-scrollbar{
@@ -673,7 +673,8 @@ header{
 .sidebar{
     background-image: linear-gradient(to right bottom, var(--primary),  rgb(3, 19, 37));
     width: 60px;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     transition: all 0.2s ease-in;
@@ -688,7 +689,7 @@ header{
     visibility: visible;
 }
 .sidebar:hover .sidebar_nav a, .sidebar_chat a{
-    visibility: visible;
+    opacity: 1;
 }
 .navbrand_logo{
     width: 14rem;
@@ -739,7 +740,7 @@ header{
    list-style: none;
    height: 100%;
    position: relative;
-   height: 50px;
+   /* height: 50px; */
    border-bottom: 1px solid var(--dark4);
    display: flex;
    padding-left: 20px;
@@ -754,19 +755,19 @@ header{
     color: var(--secondary-light);
 }
 .sidebar_nav a:hover{
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.4s ease-in;
     color: var(--secondary) !important;
 }
 .sidebar_nav a, .sidebar_chat a{
-    color: var(--light3) !important;
+    color: #b3b3b3;
     font-weight: 500;
     font-size: 16px;
     text-decoration: none;
     cursor: pointer;
-    visibility: hidden;
+    opacity: 0;
 }
 .sidebar_nav i, .sidebar_chat i{
-    color:  var(--light3);
+    color:  #b3b3b3;
     margin-right: 30px;
     font-size: 18px;
 }
@@ -851,7 +852,51 @@ header{
     cursor: pointer;
     color: var(--dark3);
     font-weight:600;
+    font-size: 14px;
+
+    position: relative;
+}
+.right_header-dashboard > button > .alert_reader{
+    position: absolute;
+    background-color: var(--secondary);
+    color: var(--light2);
     font-size: 12px;
+    padding: 6px;
+    border-radius: 50%;
+    width: 2px;
+    height: 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 5%;
+    right: -20%;
+    transform: translate(-50%, -50%);
+} 
+.right_header-dashboard > button:nth-child(2) > .alert_reader{
+    background-color: #229c04;
+}
+.account_status{
+    background-color: #fceac5;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+.account_status h3{
+    position: relative;
+    left: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary);
+}
+.account_status a{
+    text-decoration: underline;
+    color: var(--secondary);
+}
+.account_status i{
+    text-decoration: underline;
+    color: var(--secondary);
 }
 .display_name{
     height: 100%;
@@ -901,7 +946,8 @@ header{
 }
 .dashboard_overview{
     width: 100%;
-    height: 35rem;
+    height: auto;
+    max-height: 20rem;
 }
 .user_flash{
     position: relative;
@@ -1059,4 +1105,17 @@ header{
 .avatar_container img{
     object-fit: cover;
     width: 100%;
+}
+.carousel{
+    border: 1px solid var(--secondary);
+    height: 50%;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+}
+.carousel div{
+    width: 20rem;
+    border: 1px solid var(--secondary);
+
+    /* margin: 0 5px; */
 }

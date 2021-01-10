@@ -1,0 +1,6 @@
+.approval_container{
+    width: 90%;
+    height: 20rem;
+    border: 1px solid var(--light2);
+    margin: 0 auto;
+}

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | WCC | Start Trading</title>
     <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
     <script src="https://kit.fontawesome.com/bbe5d49f9d.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
@@ -20,13 +22,13 @@
             </div>
             <nav class="sidebar_nav">
                 <ul>
-                    <li id="sidebar_nav" class="active"><i class="fas fa-user"></i><a href="/auth/dashboard">Overview</a></li>
-                    <li id="sidebar_nav"><i class="fas fa-clipboard-check"></i><a href="#">Approval Center</a></li>
-                    <li id="sidebar_nav"><i class="fas fa-toggle-off"></i><a href="#">Account Status</a></li>
-                    <li id="sidebar_nav"><i class="fas fa-user"></i><a href="/auth/profile">Profile</a></li>
-                    <li id="sidebar_nav"><i class="fas fa-bell"></i><a href="#">Notification</a></li>
-                    <li id="sidebar_nav"><i class="fas fa-user-cog"></i><a href="#">Settings</a></li>
-                    <li id="sidebar_nav"><i class="fas fa-sign-out-alt"></i><a href="#">Logout</a></li>
+                    <li id="sidebar_nav" class="active"><i class="lnr lnr-diamond"></i><a href="/auth/dashboard">Overview</a></li>
+                    <li id="sidebar_nav"><i class="lnr lnr-briefcase"></i><a href="/auth/approval-center">Approval Center</a></li>
+                    <li id="sidebar_nav"><i class="lnr lnr-chart-bars"></i><a href="#">Account Status</a></li>
+                    <li id="sidebar_nav"><i class="lnr lnr-user"></i><a href="/auth/profile">Profile</a></li>
+                    <li id="sidebar_nav"><i class="lnr lnr-envelope"></i><a href="#">Notification</a></li>
+                    <li id="sidebar_nav"><i class="lnr lnr-cog"></i><a href="#">Settings</a></li>
+                    <li id="sidebar_nav"><i class="lnr lnr-power-switch"></i><a href="#">Logout</a></li>
                 </ul>
             </nav>   
             <!-- <div class="sidebar_chat">
@@ -36,15 +38,21 @@
         
         <main class="main">
             <div class="dashboard_header">
-                <h3><button class="dashboard_icon"><i class="fas fa-tools"></i></button>Dashboard</h3>
+                <h3><button class="dashboard_icon"><i class="lnr lnr-pie-chart"></i></button>Dashboard</h3>
                 <form action="" class="header_search">
-                    <i class="fas fa-search"></i>
+                    <i class="lnr lnr-magnifier"></i>
                     <input type="text" name="" id="" placeholder="Search transactions here...">
                 </form>
                 <div class="right_header-dashboard">
-                    <button class="header_btn"><i class="fas fa-bell"></i></button>
-                    <button class="header_btn"><i class="fas fa-envelope"></i></button>
-                    <button style="color:green;" class="header_btn"><i class="fas fa-question"></i></button>
+                    <button class="header_btn">
+                        <div class="alert_reader">0</div>
+                        <i class="lnr lnr-alarm"></i>
+                    </button>
+                    <button class="header_btn">
+                        <div class="alert_reader">1</div>
+                        <i class="lnr lnr-envelope"></i>
+                    </button>
+                    <button style="color:green;" class="header_btn"><i class="lnr lnr-warning"></i></button>
                     <div class="display_name">
                         <p><%= user.first_name + " " + user.other_name %></p>
                     </div>
@@ -53,6 +61,8 @@
                     </div>
                 </div>
             </div>
+            <!-- <div class="account_status"><h3><i class="fas fa-exclamation-triangle"></i> Hello <%= user.username %>, you need to activate your account before we process any contract, contact us <a href="#">here</a> to get started</h3></div> -->
+
             <div class="dashboard_overview">
                 <%- body %>
             </div>
@@ -92,7 +102,12 @@
         }
         
         new Chartist.Line(".ct-chart", data, options)
+        const style = "background-color: #c02428; font-size: 2rem; "
+        console.log("%cWarning! Dont copy any code to any person here, if you do, your account might be hack. Report any suspicious activities to our support department, thanks.", style);
+        
+        feather.replace()
     </script>
-     <script src="/scripts/dashboard.js"></script>
+
+    <script src="/scripts/dashboard.js"></script>
 </body>
 </html>
