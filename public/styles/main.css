@@ -822,7 +822,7 @@ header{
     border: 1px solid var(--dark4);
     outline: none;
     padding: 0 35px;
-    box-shadow: 0 0 10xpx rgba(0, 0, 0, 0.185) inset;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.034) inset;
     color: var(--dark3);
 }
 .header_search > input::placeholder{
@@ -860,7 +860,7 @@ header{
     position: absolute;
     background-color: var(--secondary);
     color: var(--light2);
-    font-size: 12px;
+    font-size: 10px;
     padding: 6px;
     border-radius: 50%;
     width: 2px;
@@ -1105,17 +1105,4 @@ header{
 .avatar_container img{
     object-fit: cover;
     width: 100%;
-}
-.carousel{
-    border: 1px solid var(--secondary);
-    height: 50%;
-    width: 100%;
-    padding: 20px;
-    display: flex;
-}
-.carousel div{
-    width: 20rem;
-    border: 1px solid var(--secondary);
-
-    /* margin: 0 5px; */
 }

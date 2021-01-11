@@ -63,13 +63,13 @@ app.get("/", (req, res) => {
 })
 
 // 404 page
-app.use("*", (req, res) => {
-    res.render("404", {
-        layout: false,
-        user: req.user,
-        title: "Sorry, page not found."
-    })
-})
+// app.use("*", (req, res) => {
+//     res.render("404", {
+//         layout: false,
+//         user: req.user,
+//         title: "Sorry, page not found."
+//     })
+// })
 // port
 const PORT = process.env.PORT || 3000
 // init port listener
