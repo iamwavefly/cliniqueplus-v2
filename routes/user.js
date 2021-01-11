@@ -71,6 +71,11 @@ router.get("/dashboard", auth_passport, (req, res) => {
         user: req.user
     })
 })
+router.get("/account-status", auth_passport, (req, res) => {
+    res.render("status", {
+        user: req.user
+    })
+})
 router.get("/approval-center", auth_passport, (req, res) => {
     res.render("approval", {
         user: req.user

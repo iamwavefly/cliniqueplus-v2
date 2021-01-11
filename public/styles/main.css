@@ -30,6 +30,7 @@ html{
 }
 body{
     font-family: 'Raleway', sans-serif;
+    overflow: hidden;
 }
 h2{
     color: var(--primary);
@@ -875,28 +876,6 @@ header{
 } 
 .right_header-dashboard > button:nth-child(2) > .alert_reader{
     background-color: #229c04;
-}
-.account_status{
-    background-color: #fceac5;
-    height: 25px;
-    display: flex;
-    align-items: center;
-    border: none;
-}
-.account_status h3{
-    position: relative;
-    left: 30px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--primary);
-}
-.account_status a{
-    text-decoration: underline;
-    color: var(--secondary);
-}
-.account_status i{
-    text-decoration: underline;
-    color: var(--secondary);
 }
 .display_name{
     height: 100%;
