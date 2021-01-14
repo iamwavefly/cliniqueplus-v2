@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 
     <!-- swipper animation css -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css"> -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
 
@@ -51,16 +51,16 @@
                 </form>
                 <div class="right_header-dashboard">
                     <button class="header_btn">
-                        <div class="alert_reader">0</div>
+                        <div class="alert_reader"></div>
                         <i class="lnr lnr-alarm"></i>
                     </button>
                     <button class="header_btn">
-                        <div class="alert_reader">1</div>
+                        <div class="alert_reader"></div>
                         <i class="lnr lnr-envelope"></i>
                     </button>
                     <button style="color:green;" class="header_btn"><i class="lnr lnr-warning"></i></button>
                     <div class="display_name">
-                        <p><%= user.first_name + " " + user.other_name %></p>
+                        <p><%= user.user %></p>
                     </div>
                     <div class="header_avatar">
                         <img src="/users/<%= user.photo %>" alt="" srcset="">
@@ -83,31 +83,49 @@
 
     </footer>
     <script>
-        const data = {
-        labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-        series: [
-            [1, 10, 0, 0, 20, 0, 0, 30, 0, 40, 0, 0],
-            [0, 0, 40, 0, 0, 50, 0, 0, 60, 0, 0, 0],
-            [0, 0, 0, 0, 40, 0, 0, 0, 0, 40, 0, 0],
-            [0, 0, 20,20, 30, 0, 20, 0, 0, 30, 0, 10],
-            [0, 0, 20, 0, 20, 0, 10, 0, 0, 30, 0, 0],
-            [0, 0, 20, 30, 0, 0, 50, 0, 0, 30, 0, 20],
-        ]
-        }
-        const options = {
-            showArea: true,
-            showLine: false,
-            // showPoint: false,
-            fullWidth: true,
-            axisX: {
-                showLabel: true,
-                showGrid: true
-            },
-            seriesBarDistance: 15,
-            strokeWidth: 1
-        }
+        // const data = {
+        //     labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        //     series: [
+        //         [1, 10, 0, 0, 20, 0, 0, 30, 0, 40, 0, 0],
+        //         [0, 0, 40, 0, 0, 50, 0, 0, 60, 0, 0, 0],
+        //         [0, 0, 0, 0, 40, 0, 0, 0, 0, 40, 0, 0],
+        //         [0, 0, 20,20, 30, 0, 20, 0, 0, 30, 0, 10],
+        //         [0, 0, 20, 0, 20, 0, 10, 0, 0, 30, 0, 0],
+        //         [0, 0, 20, 30, 0, 0, 50, 0, 0, 30, 0, 20],
+        //     ]
+        // }
+        // const options = {
+        //     showArea: true,
+        //     showLine: false,
+        //     // showPoint: false,
+        //     fullWidth: true,
+        //     axisX: {
+        //         showLabel: true,
+        //         showGrid: true
+        //     },
+        //     seriesBarDistance: 15,
+        //     strokeWidth: 1
+        // }
         
-        new Chartist.Line(".ct-chart", data, options)
+        // new Chartist.Line(".ct-chart", data, options)
+        new Chartist.Bar('.ct-chart', {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        series: [
+            [5, 4, 3, 7, 5, 10, 3, 9, 23, 98, 28, 23],
+            [15, 2, 21, 21, 15, 30, 32, 19, 24, 38, 18, 24],
+            // [45, 24, 23, 27, 25, 20, 13, 4, 23, 9, 2, 3],
+            // [15, 44, 33, 37, 25, 50, 33, 29, 23, 48, 48, 43],
+        ]
+        }, {
+        axisX: {
+            // On the x-axis start means top and end means bottom
+            position: 'start'
+        },
+        axisY: {
+            // On the y-axis start means left and end means right
+            position: 'end'
+        }
+        });
         const style = "background-color: #c02428; font-size: 2rem; "
         console.log("%cWarning! Dont copy any code to any person here, if you do, your account might be hack. Report any suspicious activities to our support department, thanks.", style);
         
@@ -118,7 +136,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- swiper animation script end-->
 
-    <script src="/scripts/approval.js"></script>
+    <script src="/scripts/status.js"></script>
     <script src="/scripts/dashboard.js"></script>
 </body>
 </html>

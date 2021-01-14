@@ -1,0 +1,32 @@
+var mySwiper = new Swiper('.swiper-container', {
+    // Optional parameters
+    // direction: 'vertical',
+    loop: true,
+    spaceBetween: 30,
+    centeredSlides: true,
+    // Autoplay
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+    },
+    cubeEffect: {
+      slideShadows: false,
+    },
+    effect: "fade",
+    speed: 2000,
+    // If we need pagination
+    // pagination: {
+    //   el: '.swiper-pagination',
+    // },
+  
+    // Navigation arrows
+    // navigation: {
+    //   nextEl: '.swiper-button-next',
+    //   prevEl: '.swiper-button-prev',
+    // },
+  
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  })

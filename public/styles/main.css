@@ -30,7 +30,6 @@ html{
 }
 body{
     font-family: 'Raleway', sans-serif;
-    overflow: hidden;
 }
 h2{
     color: var(--primary);
@@ -665,22 +664,22 @@ header{
 /* --> Dashboard <-- */
 .dashboard_section{
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 220px 1fr;
     justify-content: center;
     align-content: center;
     width: 100%;
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(252, 252, 252);
 }
 .sidebar{
-    background-image: linear-gradient(to right bottom, var(--primary),  rgb(3, 19, 37));
-    width: 60px;
+    background-color: var(--primary);
+    width: 100%;
     height: auto;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     transition: all 0.2s ease-in;
 }
-.sidebar:hover{
+/* .sidebar:hover{
     width: 14rem;
 }
 .sidebar:hover .navbrand_logo > .tagname{
@@ -691,19 +690,21 @@ header{
 }
 .sidebar:hover .sidebar_nav a, .sidebar_chat a{
     opacity: 1;
-}
+} */
 .navbrand_logo{
-    width: 14rem;
+    width: 12rem;
     height: 60px;
     padding: 10px;
-    position: relative;
+    position: sticky;
     top: 10px;
     display: grid;
     grid-template-columns: 4rem 1fr;
 }
 .navbrand_logo > .favicon{
+    position: relative;
+    left: 5px;
     background-image: url("/images/favicon.png");
-    background-size: contain;
+    background-size: 60%;
     background-repeat: no-repeat;
     background-position: left;
 }
@@ -714,7 +715,6 @@ header{
     background-position: left;
     position: relative;
     left: -10px;
-    visibility: hidden;
 }
 .sidebar_nav{
     position: sticky;
@@ -741,35 +741,34 @@ header{
    list-style: none;
    height: 100%;
    position: relative;
-   /* height: 50px; */
    border-bottom: 1px solid var(--dark4);
    display: flex;
-   padding-left: 20px;
+   padding-left: 20px !important;
     align-items: center;
 }
 .sidebar_nav li.active{
     background-color: var(--dark4);
+    border-left: 2px solid var(--secondary);
 }
 .sidebar_nav li:hover{
     margin-left: 5px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     color: var(--secondary-light);
 }
+.sidebar_nav a, .sidebar_chat a{
+    color: #b3b3b3;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
 .sidebar_nav a:hover{
     transition: all 0.4s ease-in;
     color: var(--secondary) !important;
 }
-.sidebar_nav a, .sidebar_chat a{
-    color: #b3b3b3;
-    font-weight: 500;
-    font-size: 16px;
-    text-decoration: none;
-    cursor: pointer;
-    opacity: 0;
-}
 .sidebar_nav i, .sidebar_chat i{
     color:  #b3b3b3;
-    margin-right: 30px;
+    margin-right: 20px;
     font-size: 18px;
 }
 .sidebar_chat{
@@ -800,14 +799,16 @@ header{
     justify-content: space-between;
     align-content: center;
     padding: 0 40px;
-    background-image: linear-gradient(to bottom, #fafafa, #eeeeee);
-    border-bottom: 1px solid var(--light1);
+    background-image: linear-gradient(to bottom, #ffffff, #fafafa);
+    position: sticky;
+    top: 0;
+    z-index: 9999;
     -webkit-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.178);
     -moz-box-shadow: 0 10px 6px -6px  rgba(0, 0, 0, 0.178);
          box-shadow: 0 10px 6px -6px  rgba(0, 0, 0, 0.178);
 }
 .dashboard_header h3{
-    color: var(--dark3);
+    color: var(--primary);
     font-weight: 600;
     font-size: 16px;
     margin: auto 0;
@@ -861,8 +862,7 @@ header{
     position: absolute;
     background-color: var(--secondary);
     color: var(--light2);
-    font-size: 10px;
-    padding: 6px;
+    padding: 4px;
     border-radius: 50%;
     width: 2px;
     height: 2px;
@@ -871,7 +871,7 @@ header{
     justify-content: center;
     align-items: center;
     top: 5%;
-    right: -20%;
+    right: -10%;
     transform: translate(-50%, -50%);
 } 
 .right_header-dashboard > button:nth-child(2) > .alert_reader{
@@ -902,36 +902,38 @@ header{
     object-fit: cover;
 }
 .dashboard_main{
-    border: 1px solid var(--light1);
+    border: 1px solid var(--light2);
     width: 100%;
-    height: 100%;
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 20px;
     position: relative;
     display: grid;
-    grid-template-rows: 60px 110px 1fr;
+    grid-template-columns: 1fr 16rem;
+    grid-template-rows: 60px 6rem 24rem;
     align-items: center;
 }
 .account_overview{
+    grid-column: 1 / 2;
+    /* grid-row: 1 / -1; */
     display: grid;
     grid-template-columns: repeat(4, calc(100% / 4));
     grid-gap: 10px;
     position: relative;
-    /* top: 3rem; */
     justify-content: center;
     align-items: center;
     padding: 10px 50px;
-    /* margin: 0 auto; */
     width: 100%;
     height: 100%;
 }
 .dashboard_overview{
     width: 100%;
-    height: auto;
-    max-height: 20rem;
+    height: 90%;
 }
 .user_flash{
     position: relative;
-    left: 30px;
-    color: var(--dark3);
+    left: 35px;
+    color: var(--primary);
     font-size: 16px;
     width: 50%;
 }
@@ -939,7 +941,7 @@ header{
     background-color: #fafafa;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 40% 1fr;
     justify-content: space-around;
     align-items: center;
     border-radius: 5px;
@@ -950,16 +952,16 @@ header{
     transition: all 0.6s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 .account_overview > div:nth-child(1){
-    border-left: 4px solid var(--primary);
+    border-left: 2px solid var(--primary);
 }
 .account_overview > div:nth-child(2){
-    border-left: 4px solid  #f0b938;
+    border-left: 2px solid  #f0b938;
 }
 .account_overview > div:nth-child(3){
-    border-left: 4px solid   rgba(192, 36, 41, 0.856);
+    border-left: 2px solid   rgba(192, 36, 41, 0.856);
 }
 .account_overview > div:nth-child(4){
-    border-left: 4px solid rgba(40, 173, 0, 0.836);
+    border-left: 2px solid rgba(40, 173, 0, 0.836);
 }
 .account_overview > div:hover{
     position: relative;
@@ -969,8 +971,8 @@ header{
 .account_overview .icon{
     background-color: var(--light2);
     border-radius: 50%;
-    height: 4rem;
-    width: 4rem;
+    height: 3rem;
+    width: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -985,7 +987,7 @@ header{
     align-items: flex-start;
 }
 .account_overview .details h3{
-    font-size: 22px;
+    font-size: 20px;
     color: var(--dark2);
 }
 .account_overview .details span{
@@ -994,16 +996,21 @@ header{
     font-weight: 600;
 }
 .chart{
-    width: 95%;
-    height: 22rem;
+    position: relative;
+    top: 10px;
+    border-radius: 10px;
+    grid-row: 3 / 4;
+    width: 92%;
+    height: 100%;
     margin: 0 auto;
     position: relative;
-    background-color: #ffffff;
-    padding: 20px;
+    background-color: #fafafa;
+    padding: 40px 20px;
     border-radius: 5px;
+    text-align: center;
     -webkit-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.178);
     -moz-box-shadow: 0 10px 6px -6px  rgba(0, 0, 0, 0.178);
-         box-shadow: 0 10px 6px -6px  rgba(0, 0, 0, 0.178);
+         box-shadow: 0 10px 6px  rgba(0, 0, 0, 0.096);
 }
 .ct-chart{
     height: 100%; 
@@ -1011,12 +1018,65 @@ header{
 
 .chart_title h3{
     position: relative;
-    left: 50%;
-    top: -5px;
-    transform: translateX(-50%);
-    color: var(--dark3);
-    font-size: 15px;
+    top: -10px;
+    color: var(--primary);
+    font-size: 16px;
     display: inline-block;
+}
+/* .chart_title p{
+    position: relative;
+    margin-top: -26px;
+    color: rgb(148, 148, 148);
+    font-size: 14px;
+} */
+.user_snippet{
+    grid-row: 2 / -1;
+    width: 90%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #fafafa;
+    -webkit-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.178);
+    -moz-box-shadow: 0 10px 6px -6px  rgba(0, 0, 0, 0.178);
+         box-shadow: 0 10px 6px  rgba(0, 0, 0, 0.178);
+
+    display: grid;
+    grid-template-rows: 8rem 4rem 10rem 1fr;
+}
+.snippet_avatar{
+    width: 6rem;
+    height: 6rem;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid var(--light2);
+    border-radius: 50%;
+    overflow: hidden;
+}
+.snippet_avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.snippet_name{
+    position: relative;
+    top: -10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.snippet_name h4{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary);
+}
+.snippet_name p{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark3);
+    position: relative;
+    top: -10px;
 }
 .toast{
     position: fixed;

@@ -1,8 +1,10 @@
-<div class="approval_container">
-    <div class="greet_panel">
-        <h3>Hello Zoom,</h3>
-        <p>Need a fast approval with 24 Hours? Upgrade your account to skip the long queue</p>
-        <a href="#">Upgrade</a>
+<div class="status_wrapper">
+    <div class="status_user_anippet">
+        <div class="greet_panel">
+            <img src="/images/icons/017-medal.png" alt="" srcset="">
+            <p>Hello, Zoom</p>
+            <a href="#">Get a Certificate</a>
+        </div>
     </div>
     <div class="advert_panel">
         <!-- Slider main container -->
@@ -11,14 +13,10 @@
             <div class="swiper-wrapper">
                 <!-- Slides -->
                 <div class="swiper-slide"><img src="/images/covid-19.png" alt=""></div>
-                <div class="swiper-slide"><img src="/images/covid-19.png" alt=""></div>
+                <div class="swiper-slide"><img src="/images/covid-19.jpg" alt=""></div>
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
-            <!-- <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div> -->
 
             <!-- If we need scrollbar -->
             <div class="swiper-scrollbar"></div>
@@ -26,19 +24,19 @@
         <!-- Slider main container end-->
 
     </div>
-</div>
-<div class="account_status">
-    <h3>What's next?</h3>
-    <p>You've successfully signed up to trade with us. Go to <a href="/auth/approval-center">approval center</a> to complete your next requirement</p>
-</div>
-<div class="steps_container">
-    <h3>Your Current Deal Roadmap</h3>
-    <p>Please note: If your current deal exceed 7 days, your account will be automatically closed and your transactions will be sealed also. You have <span style="color: #c02428;"><%= 7 - user.created_at.getDay()  %></span> days left.</p>
-    <div class="deals_steps">
-        <div class="step-1"></div>
-        <div class="step-2"></div>
-        <div class="step-3"></div>
-        <div class="step-4"></div>
-        <div class="step-5"></div>
+    <div class="account_status">
+        <h3>What's next?</h3>
+        <p>You've successfully signed up to trade with us. Go to <a href="/auth/approval-center">approval center</a> to complete your next requirement</p>
+    </div>
+    <div class="steps_container">
+        <h3>Your Current Deal Roadmap</h3>
+        <p>Please note: If your current deal exceed 7 days, your account will be automatically closed and your transactions will be sealed also. You have <span style="color: #c02428;"><%= 7 - user.created_at.getDay()  %></span> days left.</p>
+        <div class="deals_steps">
+            <div class="step-1"></div>
+            <div class="step-2"></div>
+            <div class="step-3"></div>
+            <div class="step-4"></div>
+            <div class="step-5"></div>
+        </div>
     </div>
 </div>
