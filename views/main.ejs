@@ -51,13 +51,51 @@
         </div>
         <div class="snippet_name">
             <h4><%= user.first_name + " " + user.other_name %></h3>
-            <p>Unverified</p>
+            <p><%= user.country %></p>
         </div>
-        <div class="snippet_stage-gauge">
-
-        </div>
+        <hr>
         <div class="snippet_steps">
+            <h4>Upcoming Task</h4>
+            <div class="task">
+                <div class="task_input">
+                    <input type="checkbox" id="task" checked>
+                    <label for="task" class="task_label"></label>
+                </div>
+                <div class="task_desc">
+                    <p class="task_comp">Signup</p>
+                    <span>
+                        Account created...
+                    </span>
+                </div>
+            </div>
 
+            <div class="task">
+                <div class="task_input">
+                    <input type="checkbox" id="task">
+                    <label for="task" class="task_label"></label>
+                </div>
+                <div class="task_desc">
+                    <p>Certification</p>
+                    <span>
+                        Account created...
+                    </span>
+                </div>
+            </div>
+            <div class="task">
+                <div class="task_input">
+                    <input type="checkbox" id="task">
+                    <label for="task" class="task_label"></label>
+                </div>
+                <div class="task_desc">
+                    <p>Signup</p>
+                    <span>
+                        Account created...
+                    </span>
+                </div>
+            </div>
+            <div class="task btn">
+                <a href="/auth/approval-center">More Task</a>
+            </div>
         </div>
     </div>
 </div>
