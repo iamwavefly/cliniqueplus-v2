@@ -1076,7 +1076,7 @@ header{
 }
 .snippet_name{
     position: relative;
-    top: -10px;
+    top: -15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1084,7 +1084,7 @@ header{
 }
 .snippet_name h4{
     font-size: 15.5px;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--light2);
 }
 .snippet_name p{
@@ -1111,7 +1111,7 @@ header{
     left: 20px;
     top: -10px;
     font-size: 14px;
-    color: var(--light2);
+    color: #b3b3b3;
     font-weight: 500;
 }
 .task{
@@ -1144,7 +1144,7 @@ header{
 .task.btn a{
     text-decoration: none;
     color: var(--light2);
-    font-weight: 600;
+    font-weight: 500;
     font-size: 14px;
 }
 .task input{
@@ -1186,14 +1186,14 @@ header{
 .task_desc p{
     font-size: 14px;
     font-weight: 500;
-    color: var(--light2);
+    color: #b3b3b3;
 }
 .task_comp{
     text-decoration: line-through;
 }
 .task_desc span{
     font-size: 13px;
-    color: var(--light3);
+    color: #b3b3b3;
     font-weight: 500;
 }
 /* ----------------[toast here]------------------------ */
