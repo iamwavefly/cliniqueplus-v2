@@ -15,20 +15,45 @@
                 </div>
             </div>
         </div>
-        <section class="form_container">
+        <section class="login_form-container">
             <%- include ("./partials/message") %> 
+            <div class="form_login-greet">
+                <h2>Welcome Back<%= typeof user_auth != 'undefined' ? ' ' + user_auth.username : '' %>!</h2>
+            </div>
             <form action="/auth/login" method="POST">
                 <div class="form_group">
-                    <input type="text" name="username" placeholder="Enter Username">
+                    <input type="text" name="username" id="username" placeholder="Zoom">
+                    <label for="username" class="login_form-label">Enter Username</label>
                 </div>
+                <% if(typeof (user_auth) != "undefined") { %>
+                    <div class="form_group">
+                        <input type="password" name="password" id="password" placeholder="Securely enter your password">
+                        <label for="password" class="login_form-label">Enter Password</label>
+                    </div>
+                <% } %>
                 <div class="form_group">
-                    <input type="password" name="password" placeholder="Enter Password">
-                </div>
-                <div class="form_group">
-                    <input type="submit" value="Login">
+                    <input type="submit" value="<%= typeof user_auth != 'undefined' ? 'Sign In' : 'Next' %>"
                 </div>
             </form>
         </section>
+        <div class="form_login-footer">
+            <div>Don't have account yet? <a href="#">Signup here.</a></div>
+            <footer>
+                <ul>
+                    <li>&copy; 1991 - 2021 World Coins Collection, Co. Ltd.</li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">Terms of service</a>
+                        <a href="#">Privacy policy</a>
+                        <a href="#">Help</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                    </li>
+                </ul>
+            </footer>
+        </div>
     </div>
 </body>
 </html>

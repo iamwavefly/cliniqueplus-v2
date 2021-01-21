@@ -42,7 +42,7 @@ router.post("/register", photo.single("photo"), (req, res) => {
                 console.log(err);
             }
             passport.authenticate("local")(req, res, function() {
-                req.flash("err_msg","Congratulations, your account has been created, you can now login!");
+                req.flash("success_msg","Congratulations, your account has been created, you can now login!");
                 res.redirect("/auth/login")
                 console.log(user);
             })
@@ -51,20 +51,25 @@ router.post("/register", photo.single("photo"), (req, res) => {
         console.log(error);
     }
 })
-router.post("/login", (req, res) => {
-    const user = new userSchema({
-        username: req.body.username,
-        password: req.body.password
-    })
-    req.login(user, function(err) {
-        if (err) {
-            console.log(err);
-        }
-        passport.authenticate("local")(req, res, function() {
-            res.redirect("/auth/dashboard")
+router.post("/login", async (req, res) => {
+    try {
+        await userSchema.findOne({username: req.body.username}, (error, user) => {
+            if(error) console.log(error)
             console.log(user);
+            if(user){
+                res.render("login", {
+                    user_auth: user,
+                    layout: false
+                })
+            } else {
+                req.flash("err_msg","Username not registered")
+                res.redirect("/auth/login")
+            }
         })
-    })
+        
+    } catch (error) {
+        if(error) console.log(error)
+    }
 })
 router.get("/dashboard", auth_passport, (req, res) => {
     res.render("main", {
