@@ -51,17 +51,17 @@ router.post("/register", photo.single("photo"), (req, res) => {
         console.log(error);
     }
 })
-router.post("/login", async (req, res) => {
+router.post("/validate", async (req, res, next) => {
     try {
         await userSchema.findOne({username: req.body.username}, (error, user) => {
             if(error) console.log(error)
-            console.log(user);
             if(user){
                 res.render("login", {
                     user_auth: user,
                     layout: false
                 })
-            } else {
+            } 
+            else {
                 req.flash("err_msg","Username not registered")
                 res.redirect("/auth/login")
             }
@@ -70,6 +70,28 @@ router.post("/login", async (req, res) => {
     } catch (error) {
         if(error) console.log(error)
     }
+})
+router.post("/login", (req, res) => {
+    const userAuth = new userSchema({
+        username: req.body.username,
+        passport: req.body.passport
+    })
+    req.login(userAuth, (err) => {
+        if(err) {
+            req.flash(err_msg, "Invalid password, please try again!")
+            res.redirect("/auth/login")
+        } else{
+            passport.authenticate("local", {successRedirect: "/auth/dashboard", failureRedirect: "/auth/login", failureFlash:"Invalid login credentials"})(req, res, function () {
+                console.log(req.user)
+                res.redirect("/auth/dashboard")
+            })
+        }
+    })
+})
+router.get("/logout", (req, res) => {
+    req.logout()
+    req.flash("success_msg","You're now logout")
+    res.redirect("/auth/login")
 })
 router.get("/dashboard", auth_passport, (req, res) => {
     res.render("main", {

@@ -20,19 +20,19 @@
             <div class="form_login-greet">
                 <h2>Welcome Back<%= typeof user_auth != 'undefined' ? ' ' + user_auth.username : '' %>!</h2>
             </div>
-            <form action="/auth/login" method="POST">
+            <form action="<%= typeof user_auth != 'undefined' ? '/auth/login' : '/auth/validate' %>" method="POST">
                 <div class="form_group">
                     <input type="text" name="username" id="username" placeholder="Zoom">
                     <label for="username" class="login_form-label">Enter Username</label>
                 </div>
-                <% if(typeof (user_auth) != "undefined") { %>
+                <% if(typeof user_auth != 'undefined'){ %>
                     <div class="form_group">
                         <input type="password" name="password" id="password" placeholder="Securely enter your password">
                         <label for="password" class="login_form-label">Enter Password</label>
                     </div>
                 <% } %>
                 <div class="form_group">
-                    <input type="submit" value="<%= typeof user_auth != 'undefined' ? 'Sign In' : 'Next' %>"
+                    <input type="submit" value="<%= typeof user_auth != 'undefined' ? 'Sign In' : 'Next' %>">
                 </div>
             </form>
         </section>
