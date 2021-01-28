@@ -6,7 +6,7 @@
     --light1: #bbc1ca;
     --light2: #e9ecf1;
     --light3: #b2b9c5;
-    --dark1: rgb(1, 14, 29);
+    --dark1: rgba(1, 14, 29, 0.726);
     --dark2: rgb(34, 37, 48);
     --dark3: rgb(78, 83, 112);
     --dark4:rgba(0, 0, 0, 0.096);
@@ -70,7 +70,7 @@ header{
 
     width: 100%;
     height: 4rem;
-    z-index: 999;
+    z-index: 9999;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 #navbar ul{
