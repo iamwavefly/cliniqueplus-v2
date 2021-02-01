@@ -58,7 +58,6 @@ app.use((req, res, next) => {
 app.use("/auth", userRouter)
 app.get("/", (req, res) => {
     res.render("index", {
-        layout: false
     })
 })
 

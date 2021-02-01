@@ -3,138 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | WCC | Start Trading</title>
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/status.css">
-    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <meta name="theme-color" content="#ffffff">
+    <title>Cliniqueplus Dashboard</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script defer src="https://cdnjs.com/libraries/Chart.js"></script>
 
-    <!-- swipper animation css -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css"> -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
-
-    <script src="https://kit.fontawesome.com/bbe5d49f9d.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/media_query.css">
+    <link rel="stylesheet" href="./styles/circle.css">
+    <script defer src="./scripts/main.js"></script>
+    <script defer src="./scripts/chart.js"></script>
 
 </head>
 <body>
-    <div class="dashboard_section">
-        <section class="sidebar">
-            <div class="navbrand_logo">
-                <div class="favicon"></div>
-                <div class="tagname"></div>
+    <div class="root">
+        <div class="left_panel" id="left_toggle">
+            <div class="brand__logo" id="brand_logo">
+                <div class="logo">
+                    <img src="./assets/images/logo__brand.png" alt="" srcset="">
+                </div>
+                <h3 id="logo__content">HolyLand</h3>
             </div>
-            <nav class="sidebar_nav">
-                <ul>
-                    <li id="sidebar_nav" class="active"><i class="lnr lnr-diamond"></i><a href="/auth/dashboard">Overview</a></li>
-                    <li id="sidebar_nav"><i class="lnr lnr-briefcase"></i><a href="/auth/approval-center">Approval Center</a></li>
-                    <li id="sidebar_nav"><i class="lnr lnr-chart-bars"></i><a href="account-status">Account Status</a></li>
-                    <li id="sidebar_nav"><i class="lnr lnr-user"></i><a href="/auth/profile">Profile</a></li>
-                    <li id="sidebar_nav"><i class="lnr lnr-envelope"></i><a href="#">Notification</a></li>
-                    <li id="sidebar_nav"><i class="lnr lnr-cog"></i><a href="#">Settings</a></li>
-                    <li id="sidebar_nav"><i class="lnr lnr-power-switch"></i><a href="/auth/logout">Logout</a></li>
+            <div class="primary-btn">
+                <a href="./patient_add.html">
+                    <div class="btn" id="primary_btn">
+                        <a href="./patient_add.html" id="btn__content">Register Patient</a href="./patient_add.html">
+                        <img src="./assets/icons/plus.svg" alt="" srcset="">
+                    </div>
+                </a>
+            </div>
+            <ul class="navbar" id="navbar">
+                <li class="nav_list" id="nav_list" class="nav___active nav_list"><img src="./assets/icons/1.svg" alt=""><a id="nav_link" class="nav_link" href="#">Front Office <img class="drop__arr" id="drop__arr" src="./assets/icons/front-arrow.svg" alt=""></a></li>
+                <ul class="drop__nav" id="drop__nav">
+                    <li><a href="#">Appointment</a></li>
+                    <li><a href="#">Visitor Book</a></li>
+                    <li><a href="#">Complain</a></li>
+                    <li><a href="#">Call Logs</a></li>
+                    <li><a href="#">Postal</a></li>
                 </ul>
-            </nav>   
-            <div class="bottom_link">
-                <li><a href="#"><i class="lnr lnr-bubble"></i> Chat Us</a></li>
-            </div>       
-        </section>
-        
-        <main class="main">
-            <div class="dashboard_header">
-                <h3><button class="dashboard_icon"><i class="lnr lnr-pie-chart"></i></button>Dashboard</h3>
-                <form action="" class="header_search">
-                    <i class="lnr lnr-magnifier"></i>
-                    <input type="text" name="" id="" placeholder="Search transactions here...">
-                </form>
-                <div class="right_header-dashboard">
-                    <button class="header_btn">
-                        <div class="alert_reader"></div>
-                        <i class="lnr lnr-alarm"></i>
-                    </button>
-                    <button class="header_btn">
-                        <div class="alert_reader"></div>
-                        <i class="lnr lnr-envelope"></i>
-                    </button>
-                    <button style="color:green;" class="header_btn"><i class="lnr lnr-warning"></i></button>
-                    <div class="display_name">
-                        <p><%= user.user %></p>
-                    </div>
-                    <div class="header_avatar">
-                        <img src="/users/<%= user.photo %>" alt="" srcset="">
-                    </div>
+                <li class="nav_list" id="nav_list"><img src="./assets/icons/HIS.svg" alt=""><a id="nav_link" class="nav_link" href="#">HIS <img class="drop__arr" id="drop__arr" src="./assets/icons/front-arrow.svg" alt=""></a></li>
+                <ul class="drop__nav" id="drop__nav">
+                    <li><a href="#">OPD</a></li>
+                    <li><a href="#">IPD</a></li>
+                    <li><a href="#">ICU</a></li>
+                    <li><a href="#">Operation Theatre</a></li>
+                    <li><a href="#">Blood Bank</a></li>
+                </ul>
+                <li class="nav_list" id="nav_list"><img src="./assets/icons/LIS.svg" alt=""><a id="nav_link" class="nav_link" href="#">LIS <img class="drop__arr" id="drop__arr" src="./assets/icons/front-arrow.svg" alt=""></a></li>
+                <ul class="drop__nav" id="drop__nav">
+                    <li><a href="#">Order</a></li>
+                    <li><a href="#">QC</a></li>
+                    <li><a href="#">Phleb</a></li>
+                    <li><a href="#">Analysers</a></li>
+                </ul>
+                <li class="nav_list" id="nav_list"><img class="nav__icon" src="./assets/icons/RIS.svg" alt=""><a id="nav_link" class="nav_link" href="#">RIS <img class="drop__arr" id="drop__arr" src="" alt=""></a></li>
+                <li class="nav_list" id="nav_list"><img class="nav__icon" src="./assets/icons/heart.svg" alt=""><a id="nav_link" class="nav_link" href="#">Cardiology <img class="drop__arr" id="drop__arr" src="" alt=""></a></li>
+                <li class="nav_list" id="nav_list"><img class="nav__icon" src="./assets/icons/finance.svg" alt=""><a id="nav_link" class="nav_link" href="#">Finance <img class="drop__arr" id="drop__arr" src="" alt=""></a></li>
+                <li class="nav_list" id="nav_list"><img class="nav__icon" src="./assets/icons/PIS.svg" alt=""><a id="nav_link" class="nav_link" href="#">PIS <img class="drop__arr" id="drop__arr" src="./assets/icons/front-arrow.svg" alt=""></a></li>
+                <ul class="drop__nav" id="drop__nav">
+                    <li><a href="#">Dispense</a></li>
+                    <li><a href="#">Stocks</a></li>
+                </ul>
+                <li class="nav_list" id="nav_list"><img class="nav__icon" src="./assets/icons/8.svg" alt=""><a id="nav_link" class="nav_link" href="#">Admin <img class="drop__arr" id="drop__arr" src="./assets/icons/front-arrow.svg" alt=""></a></li>
+                <ul class="drop__nav" id="drop__nav">
+                    <li><a href="#">HR</a></li>
+                </ul>
+                <li class="nav_list" id="nav_list"><img class="nav__icon" src="./assets/icons/records.svg" alt=""><a id="nav_link" class="nav_link" href="#">Records <img class="drop__arr" id="drop__arr" src="./assets/icons/front-arrow.svg" alt=""></a></li>
+                <ul class="drop__nav" id="drop__nav">
+                    <li><a href="#">Add Patient</a></li>
+                    <li><a href="#">HMO</a></li>
+                    <li><a href="#">Insurence</a></li>
+                    <li><a href="#">Coding & Indexing</a></li>
+                    <li><a href="#">All Patients</a></li>
+                </ul>
+                <li class="nav_list" id="nav_list"><img class="nav__icon" src="./assets/icons/10.svg" alt=""><a id="nav_link" class="nav_link" href="#">Logistics <img class="drop__arr" id="drop__arr" src="" alt=""></a></li>
+            </ul>
+        </div>
+        <!-- <ul class="nav__footer">
+            <li><img src="./assets/icons/help.svg" alt=""><a id="nav_link" href="#">Help?</a></li>
+        </ul> -->
+        <div class="top_panel">
+            <div class="cola" id="cola">
+                <img src="./assets/icons/cola.svg" alt="">
+            </div>
+            <div class="brand__logo-mobile">
+                <img src="./assets/images/logo__brand.png" alt="" class="img__mobile">
+                <h3 id="logo__content">HolyLand</h3>
+            </div>
+            <div class="user_sniper-mobile">
+                <div class="avatar">
+                    <img src="./assets/images/avatar.png" alt="" srcset="">
                 </div>
             </div>
-            <!-- <div class="account_status"><h3><i class="fas fa-exclamation-triangle"></i> Hello <%= user.username %>, you need to activate your account before we process any contract, contact us <a href="#">here</a> to get started</h3></div> -->
-
-            <div class="dashboard_overview">
-                <%- body %>
+            <div class="search_main">
+                <form action="/" method="get">
+                    <div class="search_len">
+                        <picture>
+                            <source 
+                              media="(max-width: 650px)"
+                              srcset="./assets/icons/search_len2.svg">
+                            <source 
+                              media="(max-width: 465px)"
+                              srcset="./assets/icons/search_len2.svg">
+                            <img 
+                              src="./assets/icons/25.svg" 
+                              alt="a cute kitten">
+                          </picture>
+                    </div>
+                    <input type="text" placeholder="Search for patient">
+                </form>
             </div>
-        </main>
+            <div class="user_sniper">
+                <button class="notif">
+                    <img src="./assets/icons/notif__dot.svg" class="notif__dot" alt="">
+                    <img src="/assets/icons/14.svg" alt="" srcset="">
+                </button>
+                <button class="msg">
+                    <img src="./assets/icons/15.svg" alt="" srcset="">
+                </button>
+                <div class="avatar">
+                    <img src=".//assets/images/avatar.png" alt="" srcset="">
+                </div>
+                <div class="username">
+                    <h3>Samson Monday</h3>
+                </div>
+                <div class="drop_arr" id="user__snippet__arr">
+                    <img src="./assets/icons/28.svg" alt="" srcset="">
+                </div>
+            </div>
+        </div>
+        <div class="main__panel">
+            <div class="user__snippet__drop" id="user__snippet__panel">
+                <ul>
+                    <li><img src="./assets/icons/setup.svg" alt=""><a href="">Setup</a></li>
+                    <li><img src="./assets/icons/reports.svg" alt=""><a href="">Reports</a></li>
+                    <li><img src="./assets/icons/profile.svg" alt=""><a href="">Profile</a></li>
+                    <li><img src="./assets/icons/logout.svg" alt=""><a href="">Logout</a></li>
+                </ul>
+            </div>
+
+
+
+
+
+
+
+
+
+                <%- body %>
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        <!-- <div class="bottom">
+            <footer>
+                CliniquePlus by Netwalkers NG (c) 2021. All right reservse
+            </footer>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Terms Of Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div> -->
+        <div class="hamburger_menu">
+            <img src="./assets/icons/hamburger.svg" alt="">
+        </div>
     </div>
 
-    <div id="toast" class="toast">
-        <p>Hello <%= user.username %>, if you have any issue, please chat us <i class="fas fa-comment"></i> <a href="#">here</a></p>
-    </div>
 
-    <footer class="footer">
 
-    </footer>
+
     <script>
-        // const data = {
-        //     labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-        //     series: [
-        //         [1, 10, 0, 0, 20, 0, 0, 30, 0, 40, 0, 0],
-        //         [0, 0, 40, 0, 0, 50, 0, 0, 60, 0, 0, 0],
-        //         [0, 0, 0, 0, 40, 0, 0, 0, 0, 40, 0, 0],
-        //         [0, 0, 20,20, 30, 0, 20, 0, 0, 30, 0, 10],
-        //         [0, 0, 20, 0, 20, 0, 10, 0, 0, 30, 0, 0],
-        //         [0, 0, 20, 30, 0, 0, 50, 0, 0, 30, 0, 20],
-        //     ]
-        // }
-        // const options = {
-        //     showArea: true,
-        //     showLine: false,
-        //     // showPoint: false,
-        //     fullWidth: true,
-        //     axisX: {
-        //         showLabel: true,
-        //         showGrid: true
-        //     },
-        //     seriesBarDistance: 15,
-        //     strokeWidth: 1
-        // }
-        
-        // new Chartist.Line(".ct-chart", data, options)
-        new Chartist.Bar('.ct-chart', {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        series: [
-            [5, 4, 3, 7, 5, 10, 3, 9, 23, 98, 28, 23],
-            [15, 2, 21, 21, 15, 30, 32, 19, 24, 38, 18, 24],
-        ]
-        }, {
-        axisX: {
-            // On the x-axis start means top and end means bottom
-            position: 'start'
-        },
-        axisY: {
-            // On the y-axis start means left and end means right
-            position: 'end'
-        }
-        });
-        const style = "background-color: #c02428; font-size: 2rem; "
-        console.log("%cWarning! Dont copy any code to any person here, if you do, your account might be hack. Report any suspicious activities to our support department, thanks.", style);
         
     </script>
-
-    <!-- swiper animation script -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <!-- swiper animation script end-->
-
-    <script src="/scripts/status.js"></script>
-    <script src="/scripts/dashboard.js"></script>
 </body>
 </html>
