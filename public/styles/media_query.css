@@ -1,22 +1,64 @@
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
     .brand__logo-mobile, .user_sniper-mobile, .hamburger_menu, .user_welcome-mobile, .search-mobile, .card__title-mobile{
         display: inline;
     }
     body{
-        background-image: radial-gradient(#fff8e3, #fffdf8);
+        /* background-image: radial-gradient(#fff8e3, #fffdf8); */
     }
     .root{
-        grid-template-columns: 1fr;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
     }
     .main__panel{
         padding: 0;
     }
     .cards{
-        background-image: radial-gradient( #ff5e62,  #ff9966);
-        grid-template-columns: 1fr !important;
-        width: 100%;
+        background-attachment: fixed;
+        background-image: linear-gradient( to right bottom, #ff5e61e1,  var(--primary-color)), url("../assets/images/card-bg.jpg");
+        background-size: cover;
         padding: 20px;
+        grid-template-columns: repeat(4, 14rem) !important;
+        overflow-x: scroll;
+        height: 12rem;
+        width: 100%;
+        margin: 0;
+    }
+    .cards > div{
+        height: 85px;
+        position: relative;
+        top: 20px;
+        margin: auto 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.137),
+                    0 0 10px rgba(0, 0, 0, 0.096)
+    }
+    .cards > div:hover{
+        position: relative;
+        top: 15px;
+        box-shadow: none;
+    }
+    .card__title-mobile{
+        display: inline !important;
+        position: relative !important;
+        top: 55px !important;
+        box-shadow: none !important;
+        background-color: transparent !important;
+        z-index: 99;
+    }
+    .card__title-mobile h3{
+        color: var(--light-color);
+        position: relative;
+        left: 25px;
+        top: 5px;
+    }
+    .left_panel{
+        transition: all .4s ease-in;
+        position: fixed;
+        width: 0%;
+        height: 100%;
+        z-index: 999;
+        overflow: scroll;
     }
     .charts{
         grid-template-columns: 1fr;
@@ -117,7 +159,6 @@
         position: relative;
         width: 85%;
         margin: 0 auto;
-        
     }
     .search-mobile input{
         background-color: var(--hightlight-color);
@@ -129,14 +170,13 @@
     }
     .search-mobile button{
         position: absolute;
-        background-image: radial-gradient( #ff5e62,  #ff9966);
-        width: 17%;
-        height: 60%;
+        background-image: linear-gradient( to right bottom, #ff5e62,  var(--primary-color));
+        width: 50px;
+        height: 50px;
         right: -2%;
         outline: none;
         border: none;
         border-radius: 10px;
-
         display: flex;
         justify-content: center;
         align-items: center;
@@ -174,32 +214,53 @@
         left: 10%;
     }
     .hamburger_menu{
-        background-color: var(--light-color);
+        /* background-image: linear-gradient(to right, #ff5e62,  #ff9966); */
+        z-index: 9999;
+        background-color: #f5f6fa;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.089);
+        box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
         position: fixed;
         bottom: 5%;
         right: 10%;
+        transform : scale(1);
+        -webkit-animation: pulse 5s infinite cubic-bezier(0.66, 0, 0, 1);
+        -moz-animation: pulse 5s infinite cubic-bezier(0.66, 0, 0, 1);
+        -ms-animation: pulse 5s infinite cubic-bezier(0.66, 0, 0, 1);
+        animation: pulse 5s infinite cubic-bezier(0.66, 0, 0, 1);
     }
-    /* .mobile_menu ul{
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .hamburger_menu img{}
+    /* --------------------------------------- */
+    /* ------KEYFRAMES ANIMATION PULSE-------- */
+    /* --------------------------------------- */
+    @-webkit-keyframes pulse {
+        to{
+            transform : scale(.95);
+            box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+        }
     }
-    .mobile_menu li{
-        list-style: none;
-        margin-right: 10px;
+    @-moz-keyframes pulse {
+        to{
+            transform : scale(.95);
+            box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+        }
     }
-    .mobile_menu a{
-        text-decoration: none;
-        color: var(--light-color);
-    } */
+    @-ms-keyframes pulse {
+        to{
+            transform : scale(.95);
+            box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+        }
+    }
+    @keyframes pulse {
+        to{
+            transform : scale(.95);
+            box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+        }
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -211,47 +272,9 @@
         /* background: red; */
     }
     .cards{
-        grid-template-columns: repeat(4, 14rem) !important;
-        overflow: scroll;
-        height: 12rem;
+
     }
-    .cards > div{
-        height: 85px;
-        position: relative;
-        top: 20px;
-        margin: auto 0;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.137),
-                    0 0 10px rgba(0, 0, 0, 0.096)
-    }
-    .cards > div:hover{
-        position: relative;
-        top: unset !important;
-        box-shadow: none;
-    }
-    .card__title-mobile{
-        display: inline !important;
-        position: relative !important;
-        top: 55px !important;
-        left: 2% !important;
-        box-shadow: none !important;
-        background-color: transparent !important;
-        z-index: 99;
-    }
-    .card__title-mobile h3{
-        color: var(--light-color);
-        position: relative;
-        left: 25px;
-        top: 5px;
-    }
-    .charts{
-        grid-template-columns: 1fr !important;
-    }
-    .chart-3{
-        /* grid-column: 1 / -1 !important; */
-    }
-    .left_panel{
-        width: 0% !important;
-    }
+    
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

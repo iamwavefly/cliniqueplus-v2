@@ -20,6 +20,7 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent !important;
 }
 html{
     scroll-behavior: smooth;
@@ -64,9 +65,10 @@ button:active{
     min-height: 100vh;
     position: sticky;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.075);
-    transition: all .4s ease-in;
     transform: translateX(0%);
     overflow: scroll;
+    transition: all .4s ease-in;
+    z-index: 9999;
 }
 .left_panel:hover{
     width: 218px;
@@ -109,12 +111,24 @@ button:active{
 .snippet__panel-red{
     display: flex !important;
 }
+.mobile__menu-display{
+    width: 18rem !important;
+    z-index: 999;
+}
+.hamburger-open-red{
+    opacity: 0 !important;
+}
 /*  */
 /*  */
 /*  */
 /*  */
 /*  */
 /*  */
+/* --------[LEV1 CLASS]-------- */
+.show__msg{
+    transform: translateY(0%) !important;
+    opacity: 1 !important;
+}
 /*  */
 /*  */
 /*  */
@@ -151,7 +165,8 @@ button:active{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to right bottom, #ff9966, #ff5e62);
+    /* background-image: linear-gradient(to right bottom, #ff9966, #ff5e62); */
+    background-image: linear-gradient( #ff5e62,  var(--primary-color));
     width: 100%;
     padding: 10px;
     color: var(--light-color);
@@ -164,7 +179,8 @@ button:active{
     transition: all 0.4s ease-in;
 }
 .primary-btn .btn:active{
-    box-shadow: 0 0 10px rgba(31, 31, 31, 0.116) inset;
+    box-shadow: 0 0 10px rgba(31, 31, 31, 0.116),
+                0 0 0 40px rgba(232, 75, 61, 0.267);
     background-image: linear-gradient(to right bottom, #ff5e62,  #ff9966);
 }
 .primary-btn .btn img{
@@ -273,6 +289,7 @@ button:active{
                 0 8px 16px rgb(0 0 0 / 2%), 
                 0 16px 32px rgb(0 0 0 / 2%), 
                 0 32px 64px rgb(0 0 0 / 2%);
+    z-index: 99;            
 }
 .top_panel > div{
     border-right: 1px solid var(--border-color);
@@ -352,6 +369,7 @@ button:active{
     border-radius: 50%;
     width: 31px;
     height: 31px;
+    position: relative;
 }
 .user_sniper .notif{
     position: relative;
@@ -371,53 +389,6 @@ button:active{
     height: 100%;
     object-fit: cover;
 }
-/* --------[USER SNIPPET DROP---------------- */
-.user_sniper .drop_arr{
-    cursor: pointer;
-}
-.user__snippet__drop{
-    background-color: var(--light-color);
-    position: absolute;
-    right: 2%;
-    top: 10%;
-    z-index: 2;
-    width: 8rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.096);
-    padding: 10px;
-    border-radius: 5px;
-    display: none;
-}
-.user__snippet__drop ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 10px;
-    line-height: 1.4rem;
-}
-.user__snippet__drop ul li{
-    list-style: none;
-}
-.user__snippet__drop ul li a{
-    text-decoration: none;
-    color: var(--dark-color);
-    padding-left: 10px;
-    position: relative;
-    top: -5px;
-    font-weight: 400;
-}
-.user__snippet__drop::before{
-    content: "";
-    width: 20px;
-    height: 20px;
-    transform: rotate(45deg);
-    background-color: var(--light-color);
-    position: absolute;
-    top: -8%;
-    right: 10%;
-    box-shadow: 0 -5px 10px -8px rgba(0, 0, 0, 0.52);
-    z-index: 1;
-}
 /* ---------{MAIN}------------ */
 .main__panel{
     display: grid;
@@ -434,6 +405,7 @@ button:active{
     grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
     grid-gap: 10px;
     position: relative;
+    z-index: 1;
 }
 .cards > div{
     display: grid;
@@ -450,7 +422,6 @@ button:active{
     top: 0;
     cursor: pointer;
     transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
-    z-index: 1;
 }
 .cards > div:hover{
     position: relative;
@@ -812,18 +783,91 @@ button:active{
 .form__patient textarea{
     padding: 10px 20px;
 }
-/* ----------------------__----- */
+/* -------------------------- */
 /* -----[MOBILE CONFIG]----- */
 /* ----------------------------- */
 .brand__logo-mobile, .user_sniper-mobile, .hamburger_menu, .user_welcome-mobile, .search-mobile, .card__title-mobile{
     display: none;
 }
 
-
-
-
-
-
-
-
+/* ------------------------------ */
+/* --------[ALERT BOX]----------- */
+/* ----------------------------- */
+/* --------[USER SNIPPET DROP---------------- */
+.user_sniper .drop_arr{
+    cursor: pointer;
+}
+.user__snippet__drop{
+    background-color: var(--light-color);
+    position: absolute;
+    right: 2%;
+    top: 12%;
+    z-index: 2;
+    width: 8rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.096);
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+.user__snippet__drop ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 10px;
+    line-height: 1.4rem;
+}
+.user__snippet__drop ul li{
+    list-style: none;
+}
+.user__snippet__drop ul li a{
+    text-decoration: none;
+    color: var(--dark-color);
+    padding-left: 10px;
+    position: relative;
+    top: -5px;
+    font-weight: 400;
+}
+.user__snippet__drop::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    background-color: var(--light-color);
+    position: absolute;
+    top: -8%;
+    right: 10%;
+    box-shadow: 0 -5px 10px -8px rgba(0, 0, 0, 0.52);
+    z-index: 1;
+}
+.msgContent{
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 10rem;
+    height: auto;
+    min-height: 5rem;
+    transform: translateY(-200%);
+    opacity: 0;
+    background-color: var(--light-color);
+    transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 2%), 
+                0 2px 4px rgb(0 0 0 / 2%), 
+                0 4px 8px rgb(0 0 0 / 2%), 
+                0 8px 16px rgb(0 0 0 / 2%), 
+                0 16px 32px rgb(0 0 0 / 2%), 
+                0 32px 64px rgb(0 0 0 / 2%);
+}
+.msgContent::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    background-color: var(--light-color);
+    position: absolute;
+    top: -8%;
+    right: 10%;
+    box-shadow: 0 -5px 10px -8px rgba(0, 0, 0, 0.52);
+    z-index: 1;
+}
 
