@@ -60,6 +60,10 @@ app.get("/", (req, res) => {
     res.render("index", {
     })
 })
+app.get("/add_patient", (req, res) => {
+    res.render("add-patient", {
+    })
+})
 
 // 404 page
 // app.use("*", (req, res) => {

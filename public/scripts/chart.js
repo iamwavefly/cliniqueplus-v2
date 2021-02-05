@@ -7,8 +7,8 @@ new Chart(document.getElementById("myChart"), {
           // -------------------LINE OUTPATIENT------------------
           label: "Outpatient",
           type: "line",
-          borderColor: "rgba(255, 153, 102, 0.527)",
-            pointBackgroundColor: 'rgba(255, 153, 102, 0.527)',
+          borderColor: "rgba(255, 153, 102, 0.4)",
+            pointBackgroundColor: 'rgba(255, 153, 102, 0.4)',
           data: [408,547,675,734,200,212,233,500,233,900,200,400],
           fill: false
         }, 
@@ -25,7 +25,7 @@ new Chart(document.getElementById("myChart"), {
           // -------------------BAR OUTPATIENT------------------
           label: "Outpatient",
           type: "bar",
-          backgroundColor: "rgba(255, 153, 102, 0.527)",
+          backgroundColor: "rgba(255, 153, 102, 0.4)",
           data: [408,547,675,734,200,212,233,500,233,900,200,400],
         }, 
         {
@@ -86,8 +86,8 @@ new Chart(document.getElementById("chart__finance"), {
           // -------------------LINE OUTPATIENT------------------
           label: "Income",
           type: "line",
-          borderColor: "rgba(255, 153, 102, 0.527)",
-            pointBackgroundColor: 'rgba(255, 153, 102, 0.527)',
+          borderColor: "rgba(255, 153, 102, 0.4)",
+            pointBackgroundColor: 'rgba(255, 153, 102, 0.4)',
           data: [408,547,675,534,400,212,133,800,233,900,200,400],
           fill: false
         }, 
@@ -104,7 +104,7 @@ new Chart(document.getElementById("chart__finance"), {
           // -------------------BAR OUTPATIENT------------------
           label: "Income",
           type: "bar",
-          backgroundColor: "rgba(255, 153, 102, 0.527)",
+          backgroundColor: "rgba(255, 153, 102, 0.4)",
           data: [408,547,675,534,400,212,133,800,233,900,200,400],
         }, 
         {

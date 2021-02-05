@@ -7,13 +7,16 @@
     <title>Cliniqueplus Dashboard</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <script defer src="https://cdnjs.com/libraries/Chart.js"></script>
-
+    <link rel="stylesheet" defer href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://kit.fontawesome.com/129210617d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/add_patient.css">
     <link rel="stylesheet" href="./styles/media_query.css">
     <link rel="stylesheet" href="./styles/circle.css">
     <script defer src="./scripts/main.js"></script>
+    <script defer src="./scripts/add_patient.js"></script>
     <script defer src="./scripts/chart.js"></script>
 
 </head>
@@ -29,13 +32,13 @@
             <div class="primary-btn">
                 <a href="#">
                     <div class="btn" id="primary_btn">
-                        <a href="#" id="btn__content">Register Patient</a>
+                        <a href="/add_patient" id="btn__content">Register Patient</a>
                         <img src="./assets/icons/plus.svg" alt="" srcset="">
                     </div>
                 </a>
             </div>
             <ul class="navbar" id="navbar">
-                <li class="nav_list" id="nav_list" class="nav___active nav_list"><img src="./assets/icons/1.svg" alt=""><a id="nav_link" class="nav_link" href="#">Front Office <img class="drop__arr" id="drop__arr" src="./assets/icons/front-arrow.svg" alt=""></a></li>
+                <li class="nav_list nav___active" id="nav_list"><img src="./assets/icons/1.svg" alt=""><a id="nav_link" class="nav_link" href="#">Front Office <img class="drop__arr" id="drop__arr" src="./assets/icons/front-arrow.svg" alt=""></a></li>
                 <ul class="drop__nav" id="drop__nav">
                     <li><a href="#">Appointment</a></li>
                     <li><a href="#">Visitor Book</a></li>
@@ -72,13 +75,13 @@
                 </ul>
                 <li class="nav_list" id="nav_list"><img class="nav__icon" src="./assets/icons/records.svg" alt=""><a id="nav_link" class="nav_link" href="#">Records <img class="drop__arr" id="drop__arr" src="./assets/icons/front-arrow.svg" alt=""></a></li>
                 <ul class="drop__nav" id="drop__nav">
-                    <li><a href="#">Add Patient</a></li>
+                    <li><a href="/add_patient">Add Patient</a></li>
                     <li><a href="#">HMO</a></li>
                     <li><a href="#">Insurence</a></li>
                     <li><a href="#">Coding & Indexing</a></li>
                     <li><a href="#">All Patients</a></li>
                 </ul>
-                <li class="nav_list" id="nav_list"><img class="nav__icon" src="./assets/icons/10.svg" alt=""><a id="nav_link" class="nav_link" href="#">Logistics <img class="drop__arr" id="drop__arr" src="" alt=""></a></li>
+                <li class="nav_list" id="nav_list"><img class="nav__icon" src="./assets/icons/10.svg" alt=""><a id="nav_link" class="nav_link" href="#">Logistics <img class="drop__arr" id="drop__arr" src="" alt=""></a></li> 
             </ul>
         </div>
         <!-- <ul class="nav__footer">
@@ -92,11 +95,11 @@
                 <img src="./assets/images/logo__brand.png" alt="" class="img__mobile">
                 <h3 id="logo__content">FakeDocs</h3>
             </div>
-            <div class="user_sniper-mobile">
+            <!-- <div class="user_sniper-mobile">
                 <div class="avatar" id="user__snippet__arr">
                     <img src="./assets/images/avatar.png" alt="" srcset="">
                 </div>
-            </div>
+            </div> -->
             <div class="search_main">
                 <form action="/" method="get">
                     <div class="search_len">
@@ -116,12 +119,88 @@
                 </form>
             </div>
             <div class="user_sniper">
-                <button class="notif" id="MsgCont">
-                    <img src="./assets/icons/notif__dot.svg" class="notif__dot" alt="">
+                <button class="notif active" id="MsgCont">
                     <img src="/assets/icons/14.svg" alt="" srcset="">
+                    <!-- ----------------------------------------- -->
+                    <!-- ------------[NOTIFICATION MSG]----------- -->
+                    <!-- --------------------------------------------->
                     <div class="msgContent" id="msgContent">
-                        <h2>Hello</h2>
+                        <div class="message">
+                            <div class="msg__avatar">
+                                <div class="avatar">
+                                    <img src="./assets/images/avatar.png" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="msg__snippet">
+                                <h3>Hello, new update</h3>
+                                <span>&#128337;14min, ago</span>
+                                <p>new have a new update from mexico now</p>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="msg__avatar">
+                                <div class="avatar">
+                                    <img src="./assets/images/avatar.png" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="msg__snippet">
+                                <h3>Hello, new update</h3>
+                                <span>&#128337;14min, ago</span>
+                                <p>new have a new update from mexico now</p>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="msg__avatar">
+                                <div class="avatar">
+                                    <img src="./assets/images/avatar.png" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="msg__snippet">
+                                <h3>Hello, new update</h3>
+                                <span>&#128337;14min, ago</span>
+                                <p>new have a new update from mexico now</p>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="msg__avatar">
+                                <div class="avatar">
+                                    <img src="./assets/images/avatar.png" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="msg__snippet">
+                                <h3>Hello, new update</h3>
+                                <span>&#128337;14min, ago</span>
+                                <p>new have a new update from mexico now</p>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="msg__avatar">
+                                <div class="avatar">
+                                    <img src="./assets/images/avatar.png" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="msg__snippet">
+                                <h3>Hello, new update</h3>
+                                <span>&#128337;14min, ago</span>
+                                <p>new have a new update from mexico now</p>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="msg__avatar">
+                                <div class="avatar">
+                                    <img src="./assets/images/avatar.png" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="msg__snippet">
+                                <h3>Hello, new update</h3>
+                                <span>&#128337;14min, ago</span>
+                                <p>new have a new update from mexico now</p>
+                            </div>
+                        </div>
                     </div>
+                    <!-- ----------------------------------------- -->
+                    <!-- ------------[NOTIFICATION MSG END]----------- -->
+                    <!-- --------------------------------------------->
                 </button>
                 <button class="msg" id="MsgCont">
                     <img src="./assets/icons/15.svg" alt="" srcset="">
@@ -129,32 +208,113 @@
                         <h2>Hello 2</h2>
                     </div>
                 </button>
-                <div class="avatar">
-                    <img src=".//assets/images/avatar.png" alt="" srcset="">
-                </div>
+                <!-- <div class="avatar">
+                    <img src="./assets/images/avatar.png" alt="" srcset="">
+                </div> -->
+                <button class="user_menu msg" id="MsgCont">
+                    <img src="./assets/images/avatar.png" class="mobile__avatar-img" alt="" srcset="">
+                    <div class="user_menu msgContent" id="msgContent">
+                        <div class="message">
+                            <div class="msg__avatar">
+                                <div class="avatar">
+                                    <img src="./assets/icons/setup.svg" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="msg__snippet">
+                                <h3>Setup</h3>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="msg__avatar">
+                                <div class="avatar">
+                                    <img src="./assets/icons/reports.svg" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="msg__snippet">
+                                <h3>Reports</h3>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="msg__avatar">
+                                <div class="avatar">
+                                    <img src="./assets/icons/profile.svg" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="msg__snippet">
+                                <h3>Profile</h3>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="msg__avatar">
+                                <div class="avatar">
+                                    <img src="./assets/icons/logout.svg" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="msg__snippet">
+                                <h3>Logout</h3>
+                            </div>
+                        </div>
+                    </div>
+                </button>
                 <div class="username">
                     <h3>Samson Monday</h3>
                 </div>
-                <div class="drop_arr" id="user__snippet__arr">
+                <!-- <div class="drop_arr" id="user__snippet__arr">
                     <img src="./assets/icons/28.svg" alt="" srcset="">
-                </div>
+                </div> -->
+                <button class="user_menu msg arr" id="MsgCont">
+                    <img src="./assets/icons/28.svg" alt="" srcset="">
+                    <div class="user_menu msgContent" id="msgContent">
+                        <div class="message">
+                            <div class="msg__avatar">
+                                <div class="avatar">
+                                    <img src="./assets/icons/setup.svg" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="msg__snippet">
+                                <h3>Setup</h3>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="msg__avatar">
+                                <div class="avatar">
+                                    <img src="./assets/icons/reports.svg" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="msg__snippet">
+                                <h3>Reports</h3>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="msg__avatar">
+                                <div class="avatar">
+                                    <img src="./assets/icons/profile.svg" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="msg__snippet">
+                                <h3>Profile</h3>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="msg__avatar">
+                                <div class="avatar">
+                                    <img src="./assets/icons/logout.svg" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="msg__snippet">
+                                <h3>Logout</h3>
+                            </div>
+                        </div>
+                    </div>
+                </button>
             </div>
         </div>
-        <div class="main__panel">
-            <div class="user__snippet__drop" id="user__snippet__panel">
-                <ul>
-                    <li><img src="./assets/icons/setup.svg" alt=""><a href="">Setup</a></li>
-                    <li><img src="./assets/icons/reports.svg" alt=""><a href="">Reports</a></li>
-                    <li><img src="./assets/icons/profile.svg" alt=""><a href="">Profile</a></li>
-                    <li><img src="./assets/icons/logout.svg" alt=""><a href="">Logout</a></li>
-                </ul>
-            </div>
-
-
+        <div class="theme__color" id="theme__color"><img class="nav__icon" src="./assets/icons/10.svg" alt=""></div>
+            
+            <div class="content">
                 <%- body %>
-
-
             </div>
+           
         <div class="bottom">
             <footer>
                 CliniquePlus by Netwalkers NG (c) 2021. All right reservse
@@ -168,13 +328,6 @@
         </div>
         <div class="hamburger_menu">
             <img src="./assets/icons/hamburger.svg" id="hamburger" alt="">
-            <!-- <ul>
-                <li><img src="./assets/icons/briefcase-mobile.svg" alt=""><a href="#">Front Office</a></li>
-                <li><img src="./assets/icons/briefcase-mobile.svg" alt=""><a href="#">Finance</a></li>
-                <li><img src="./assets/icons/briefcase-mobile.svg" alt=""><a href="#">Records</a></li>
-                <li><img src="./assets/icons/briefcase-mobile.svg" alt=""><a href="#">HIS</a></li>
-                <li><img src="./assets/icons/briefcase-mobile.svg" alt=""><a href="#">Admin</a></li>
-            </ul> -->
         </div>
     </div>
 
