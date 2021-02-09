@@ -2,306 +2,475 @@
     <ul>
         <li><a href="/">/</a></li>
         <li><a href="/patient">patient</a></li>
-        <li><a href="/add_patient">add patient</a></li>
+        <li><a href="/add_patient">/add patient</a></li>
     </ul>
 </div>
-<div class="patient__form-container">
+<form action="/" method="POST" autocomplete="off" class="patient__form-container">
     <div class="form__header">
-        <h2>Patient Identity Information</h2>
+        <h2 id="header_title">Patient Identity Information</h2>
         <p>Fill the patient information in the fields provided below</p>
     </div>
-    <!-- --------------------------------- -->
-    <!--------------- FORM 1 ---------------->
-    <!-- --------------------------------- -->
-    <div class="form_slider">
-
-        <div class="patient__form form-1" id="form-1">
-            <div class="form__status">
-                <div class="status">
-                    <div class="step-1 active"></div>
-                    <div class="step-2"></div>
-                    <div class="step-3"></div>
-                    <div class="step-4"></div>
-                    <div class="step-5"></div>
+    
+    <div class="form_slider_controller">
+        <!-- <div class="msg success">
+            <span>Please fill all required * filled</span>
+        </div> -->
+        <div class="form_slider" id="form_slider">
+            <!-- --------------------------------- -->
+            <!--------------- FORM 1 ---------------->
+            <!-- --------------------------------- -->
+            <div class="patient__form form-1" id="form-1">
+                <div class="form__status">
+                    <div class="status">
+                        <div class="step-1 active"></div>
+                        <div class="step-2"></div>
+                        <div class="step-3"></div>
+                        <div class="step-4"></div>
+                        <div class="step-5"></div>
+                        <div class="step-6"></div>
+                    </div>
+                </div>
+                <div class="form_container">
+                    <div class="form_group">
+                        <div class="form_wrap">
+                            <input type="text" id="firstname" name="firstname" class="required" placeholder="Enter patient first name">
+                            <img src="./assets/icons/user_icon.svg">
+                            <label for="firstname">First Name <span>*</span></label>
+                        </div>
+                        <div class="form_wrap">
+                            <input type="text" id="lastname" name="lastname" class="required" placeholder="Enter patient last name">
+                            <img src="./assets/icons/user_icon.svg">
+        
+                            <label for="lastname">Last Name <span>*</span></label>
+                        </div>
+                    </div>
+                    <div class="form_group">
+                        <div class="form_wrap">
+                            <input type="text" id="surname" name="surname" placeholder="Enter patient surname">
+                            <img src="./assets/icons/user_icon.svg">
+                            <label for="surname">Surname</label>
+        
+                        </div>
+                        <div class="form_wrap">
+                            <select type="text" id="gender" name="gender" class="required">
+                                <option value="" disabled selected>Select patient gender</option>
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                            </select>
+                            <img src="./assets/icons/input_select.svg">
+                            <label for="gender">Gender <span>*</span></label>
+        
+                        </div>
+                    </div>
+                    <div class="form_group">
+                        <div class="form_wrap">
+                            <input type="email" id="email" name="email" class="required" placeholder="Enter patient email address">
+                            <img src="./assets/icons/input_envelope.svg">
+                            <label for="email">Email Address</label>
+                        </div>
+                        <div class="form_wrap">
+                            <input type="number" id="phone" name="phone" class="required" placeholder="Enter patient phone number">
+                            <img src="./assets/icons/input_phone.svg">
+                            <label for="phone">Phone Number <span>*</span></label>
+                        </div>
+                    </div>
+                    
+                    <div class="form_group">
+                        <div class="form_wrap">
+                            <select id="blood" name="blood">
+                                <option value="" selected disabled>Select patient blood group</option>
+                                <option>A+</option>
+                                <option>A-</option>
+                                <option>B+</option>
+                                <option>B-</option>
+                                <option>AB+</option>
+                                <option>AB-</option>
+                                <option>AB+</option>
+                                <option>O+</option>
+                                <option>O-</option>
+                            </select>
+                            <img src="./assets/icons/input_select.svg">
+                            <label for="blood">Bloog Group</label>
+                        </div>
+                        <div class="form_wrap">
+                            <select name="genetype" id="genetype">
+                                <option value="" selected disabled>Select patient genetype</option>
+                                <option>AA</option>
+                                <option>AS Negative</option>
+                                <option>AC Unknown</option>
+                                <option>Others</option>
+                                <option>B Negative</option>
+                                <option>B Unknown</option>
+                                <option>AB Positive</option>
+                                <option>AB Negative</option>
+                                <option>AB Unknown</option>
+                                <option>O Positive</option>
+                                <option>O Negative</option>
+                                <option>O Unknown</option>
+                                <option>Unknown</option>
+                            </select>
+                            <label for="genetype">Genetype</label>
+                            <img src="./assets/icons/input_select.svg">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="patient_forms">
-                <div class="form_group">
-                    <div class="form_wrap">
-                        <input type="text" id="firstname" name="firstname" required placeholder="Enter patient first name">
-                        <img src="./assets/icons/user_icon.svg">
-                        <label for="firstname">First Name</label>
-                    </div>
-                    <div class="form_wrap">
-                        <input type="text" id="lastname" name="lastname" required placeholder="Enter patient last name">
-                        <img src="./assets/icons/user_icon.svg">
-    
-                        <label for="lastname">Last Name</label>
-                    </div>
-                </div>
-                <div class="form_group">
-                    <div class="form_wrap">
-                        <input type="text" id="firstname" name="firstname" placeholder="Enter patient surname">
-                        <img src="./assets/icons/user_icon.svg">
-                        <label for="firstname">Surname</label>
-    
-                    </div>
-                    <div class="form_wrap">
-                        <select type="text" id="lastname" name="lastname" required>
-                            <option value="" disabled selected>Select patient gender</option>
-                            <option value="Female">Female</option>
-                            <option value="Male">Male</option>
-                        </select>
-                        <img src="./assets/icons/input_select.svg">
-                        <label for="lastname">Gender</label>
-    
+            <!-- --------------------------------- -->
+            <!--------------- FORM 2 ---------------->
+            <!-- --------------------------------- -->
+            <div class="patient__form form-2" id="form-2">
+                <div class="form__status">
+                    <div class="status">
+                        <div class="step-1 active"></div>
+                        <div class="step-2 active"></div>
+                        <div class="step-3"></div>
+                        <div class="step-4"></div>
+                        <div class="step-5"></div>
+                        <div class="step-6"></div>
                     </div>
                 </div>
-                <div class="form_group">
-                    <div class="form_wrap">
-                        <input type="email" id="firstname" name="firstname" placeholder="Enter patient email address">
-                        <img src="./assets/icons/input_envelope.svg">
-                        <label for="firstname">Email Address</label>
+                <div class="form_container">
+                    <div class="form_group single_input">
+                        <div class="form_wrap">
+                            <input type="text" id="address" class="required" name="address" placeholder="Enter patient current address">
+                            <img src="./assets/icons/map_marker.svg">
+                            <label for="address">Address</label>
+                        </div>
                     </div>
-                    <div class="form_wrap">
-                        <input type="number" id="phone" name="phone" required placeholder="Enter patient phone number">
-                        <img src="./assets/icons/input_phone.svg">
-                        <label for="phone">Phone Number</label>
+                    <div class="form_group single_input">
+                        <div class="form_wrap">
+                            <input type="text" id="permanent_address" class="required" name="permanent_address" placeholder="Enter patient permanent address">
+                            <img src="./assets/icons/map_marker.svg">
+                            <label for="permanent_address">Permanent Address</label>
+                        </div>
+                    </div>
+                    <div class="form_group">
+                        <div class="form_wrap">
+                            <select name="state" id="state">
+                                <option value="" selected="selected" disabled>Select state of origin </option>
+                                <option value="Abuja">Abuja FCT</option>
+                                <option value="Abia">Abia</option>
+                                <option value="Adamawa">Adamawa</option>
+                                <option value="Akwa Ibom">Akwa Ibom</option>
+                                <option value="Anambra">Anambra</option>
+                                <option value="Bauchi">Bauchi</option>
+                                <option value="Bayelsa">Bayelsa</option>
+                                <option value="Benue">Benue</option>
+                                <option value="Borno">Borno</option>
+                                <option value="Cross River">Cross River</option>
+                                <option value="Delta">Delta</option>
+                                <option value="Ebonyi">Ebonyi</option>
+                                <option value="Edo">Edo</option>
+                                <option value="Ekiti">Ekiti</option>
+                                <option value="Enugu">Enugu</option>
+                                <option value="Gombe">Gombe</option>
+                                <option value="Imo">Imo</option>
+                                <option value="Jigawa">Jigawa</option>
+                                <option value="Kaduna">Kaduna</option>
+                                <option value="Kano">Kano</option>
+                                <option value="Katsina">Katsina</option>
+                                <option value="Kebbi">Kebbi</option>
+                                <option value="Kogi">Kogi</option>
+                                <option value="Kwara">Kwara</option>
+                                <option value="Lagos">Lagos</option>
+                                <option value="Nassarawa">Nassarawa</option>
+                                <option value="Niger">Niger</option>
+                                <option value="Ogun">Ogun</option>
+                                <option value="Ondo">Ondo</option>
+                                <option value="Osun">Osun</option>
+                                <option value="Oyo">Oyo</option>
+                                <option value="Plateau">Plateau</option>
+                                <option value="Rivers">Rivers</option>
+                                <option value="Sokoto">Sokoto</option>
+                                <option value="Taraba">Taraba</option>
+                                <option value="Yobe">Yobe</option>
+                                <option value="Zamfara">Zamfara</option>
+                                <option value="Outside Nigeria">Outside Nigeria</option>
+                            </select>
+                            <img src="./assets/icons/input_select.svg">
+                            <label for="state">State of Origin <span>*</span></label>
+                        </div>
+                        <div class="form_wrap">
+                            <select name="city" id="city">
+                                <option value="" disabled selected>Please select patient state first</option>
+                            </select>
+                            <img src="./assets/icons/input_select.svg">
+                            <label for="city">LGA <span>*</span></label>
+                        </div>
                     </div>
                 </div>
-                <div class="form_group">
-                    <div class="form_wrap">
-                        <select id="blood" name="blood">
-                            <option value="" selected disabled>Select patient blood group</option>
-                            <option>A Positive</option>
-                            <option>A Negative</option>
-                            <option>A Unknown</option>
-                            <option>B Positive</option>
-                            <option>B Negative</option>
-                            <option>B Unknown</option>
-                            <option>AB Positive</option>
-                            <option>AB Negative</option>
-                            <option>AB Unknown</option>
-                            <option>O Positive</option>
-                            <option>O Negative</option>
-                            <option>O Unknown</option>
-                            <option>Unknown</option>
-                        </select>
-                        <img src="./assets/icons/input_select.svg">
-                        <label for="blood">Bloog Group</label>
+            </div>
+            <!-- --------------------------------- -->
+            <!--------------- FORM 3 ---------------->
+            <!-- --------------------------------- -->
+            <div class="patient__form form-3" id="form-3">
+                <div class="form__status">
+                    <div class="status">
+                        <div class="step-1 active"></div>
+                        <div class="step-2 active"></div>
+                        <div class="step-3 active"></div>
+                        <div class="step-4"></div>
+                        <div class="step-5"></div>
+                        <div class="step-6"></div>
                     </div>
-                    <div class="form_wrap">
-                        <select name="genetype" id="genetype">
-                            <option value="" selected disabled>Select patient genetype</option>
-                            <option>A Positive</option>
-                            <option>A Negative</option>
-                            <option>A Unknown</option>
-                            <option>B Positive</option>
-                            <option>B Negative</option>
-                            <option>B Unknown</option>
-                            <option>AB Positive</option>
-                            <option>AB Negative</option>
-                            <option>AB Unknown</option>
-                            <option>O Positive</option>
-                            <option>O Negative</option>
-                            <option>O Unknown</option>
-                            <option>Unknown</option>
-                        </select>
-                        <label for="genetype">Genetype</label>
-                        <img src="./assets/icons/input_select.svg">
+                </div>
+                <div class="form_container">
+                    <div class="form_group single_input">
+                        <div class="form_wrap">
+                            <input type="text" id="sponsor" name="sponsor" placeholder="Search or enter sponsor">
+                            <img src="./assets/icons/input_lens.svg">
+                            <label for="firstname">Sponsor</label>
+                        </div>
+                    </div>
+                    <div class="form_group">
+                        <div class="form_wrap">
+                            <select type="hmo" id="hmo" name="hmo">
+                                <option value="" disabled selected>Select HMO</option>
+                            </select>
+                            <img src="./assets/icons/input_select.svg">
+                            <label for="lastname">HMO</label>
+                        </div>
+                        <div class="form_wrap">
+                            <select type="text" id="insurance" name="insurance">
+                                <option value="" disabled selected>Select patience insurance</option>
+                            </select>
+                            <img src="./assets/icons/input_select.svg">
+                            <label for="insurance">Insurance</label>
+        
+                        </div>
+                    </div>
+                    <div class="form_group single_input">
+                        <div class="form_wrap">
+                            <textarea name="note" id="note" placeholder="Enter remarks* here"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- --------------------------------- -->
+            <!--------------- FORM 4 ---------------->
+            <!-- --------------------------------- -->
+            <div class="patient__form form-4" id="form-4">
+                <div class="form__status">
+                    <div class="status">
+                        <div class="step-1 active"></div>
+                        <div class="step-2 active"></div>
+                        <div class="step-3 active"></div>
+                        <div class="step-4 active"></div>
+                        <div class="step-5"></div>
+                        <div class="step-6"></div>
+                    </div>
+                </div>
+                <div class="form_container">
+                    <div class="form_group">
+                        <div class="form_wrap">
+                            <input type="text" id="allergis" name="allergis" placeholder="Enter patient allergis">
+                            <img src="./assets/icons/user_icon.svg">
+                            <label for="allergis">Allergis</label>
+                        </div>
+                        <div class="form_wrap">
+                            <select type="text" id="religion" name="religion">
+                                <option value="" disabled selected>select patient religion</option>
+                                <option value="Christain">Christain</option>
+                                <option value="Muslim">Muslim</option>
+                                <option value="Pegan">Pegan</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <img src="./assets/icons/input_select.svg">
+                            <label for="lastname">Religion</label>
+                        </div>
+                    </div>
+                    <div class="form_group single_input">
+                        <div class="form_wrap">
+                            <select id="occupation" name="occupation">
+                                <option value="" disabled selected>Enter patient patient occupation</option>
+                                <optgroup label="Healthcare Practitioners and Technical Occupations:">
+                                    <option value="Chiropractor">-  Chiropractor</option>
+                                    <option value="Dentist">-  Dentist</option>
+                                    <option value="Dietitian or Nutritionist">-  Dietitian or Nutritionist</option>
+                                    <option value="Optometrist">-  Optometrist</option>
+                                    <option value="Pharmacist">-  Pharmacist</option>
+                                    <option value="Physician">-  Physician</option>
+                                    <option value="Physician Assistant">-  Physician Assistant</option>
+                                    <option value="Podiatrist">-  Podiatrist</option>
+                                    <option value="Registered Nurse">-  Registered Nurse</option>
+                                    <option value="Therapist">-  Therapist</option>
+                                    <option value="Veterinarian">-  Veterinarian</option>
+                                    <option value="Health Technologist or Technician">-  Health Technologist or Technician</option>
+                                    <option value="Other Healthcare Practitioners and Technical Occupation">-  Other Healthcare Practitioners and Technical Occupation</option>
+                                </optgroup>
+                                <optgroup label="Healthcare Support Occupations:">
+                                    <option value="Nursing, Psychiatric, or Home Health Aide">-  Nursing, Psychiatric, or Home Health Aide</option>
+                                    <option value="Occupational and Physical Therapist Assistant or Aide">-  Occupational and Physical Therapist Assistant or Aide</option>
+                                    <option value="Other Healthcare Support Occupation">-  Other Healthcare Support Occupation</option>
+                                </optgroup>
+                                <optgroup label="Business, Executive, Management, and Financial Occupations:">
+                                    <option value="Chief Executive">-  Chief Executive</option>
+                                    <option value="General and Operations Manager">-  General and Operations Manager</option>
+                                    <option value="Advertising, Marketing, Promotions, Public Relations, and Sales Manager">-  Advertising, Marketing, Promotions, Public Relations, and Sales Manager</option>
+                                    <option value="Operations Specialties Manager">-  Operations Specialties Manager (e.g., IT or HR Manager)</option>
+                                    <option value="Construction Manager">-  Construction Manager</option>
+                                    <option value="Engineering Manager">-  Engineering Manager</option>
+                                    <option value="Accountant, Auditor">-  Accountant, Auditor</option>
+                                    <option value="Business Operations or Financial Specialist">-  Business Operations or Financial Specialist</option>
+                                    <option value="Business Owner">-  Business Owner</option>
+                                    <option value="Other Business, Executive, Management, Financial Occupation">-  Other Business, Executive, Management, Financial Occupation</option>
+                                </optgroup>
+                                <optgroup label="Architecture and Engineering Occupations:">
+                                    <option value="Architect, Surveyor, or Cartographer">-  Architect, Surveyor, or Cartographer</option>
+                                    <option value="Engineer">-  Engineer</option>
+                                    <option value="Other Architecture and Engineering Occupation">-  Other Architecture and Engineering Occupation</option>
+                                </optgroup>
+                                <optgroup label="Education, Training, and Library Occupations:">
+                                    <option value="Postsecondary Teacher">-  Postsecondary Teacher (e.g., College Professor)</option>
+                                    <option value="Primary, Secondary, or Special Education School Teacher">-  Primary, Secondary, or Special Education School Teacher</option>
+                                    <option value="Other Teacher or Instructor">-  Other Teacher or Instructor</option>
+                                    <option value="Other Education, Training, and Library Occupation">-  Other Education, Training, and Library Occupation</option>
+                                </optgroup>
+                                <optgroup label="Other Professional Occupations:">
+                                    <option value="Arts, Design, Entertainment, Sports, and Media Occupations">-  Arts, Design, Entertainment, Sports, and Media Occupations</option>
+                                    <option value="Computer Specialist, Mathematical Science">-  Computer Specialist, Mathematical Science</option>
+                                    <option value="Counselor, Social Worker, or Other Community and Social Service Specialist">-  Counselor, Social Worker, or Other Community and Social Service Specialist</option>
+                                    <option value="Lawyer, Judge">-  Lawyer, Judge</option>
+                                    <option value="Life Scientist">-  Life Scientist (e.g., Animal, Food, Soil, or Biological Scientist, Zoologist)</option>
+                                    <option value="Physical Scientist">-  Physical Scientist (e.g., Astronomer, Physicist, Chemist, Hydrologist)</option>
+                                    <option value="Religious Worker">-  Religious Worker (e.g., Clergy, Director of Religious Activities or Education)</option>
+                                    <option value="Social Scientist and Related Worker">-  Social Scientist and Related Worker</option>
+                                    <option value="Other Professional Occupation">-  Other Professional Occupation</option>
+                                </optgroup>
+                                <optgroup label="Office and Administrative Support Occupations:">
+                                    <option value="Supervisor of Administrative Support Workers">-  Supervisor of Administrative Support Workers</option>
+                                    <option value="Financial Clerk">-  Financial Clerk</option>
+                                    <option value="Secretary or Administrative Assistant">-  Secretary or Administrative Assistant</option>
+                                    <option value="Material Recording, Scheduling, and Dispatching Worker">-  Material Recording, Scheduling, and Dispatching Worker</option>
+                                    <option value="Other Office and Administrative Support Occupation">-  Other Office and Administrative Support Occupation</option>
+                                </optgroup>
+                                <optgroup label="Services Occupations:">
+                                    <option value="Protective Service">-  Protective Service (e.g., Fire Fighting, Police Officer, Correctional Officer)</option>
+                                    <option value="Chef or Head Cook">-  Chef or Head Cook</option>
+                                    <option value="Cook or Food Preparation Worker">-  Cook or Food Preparation Worker</option>
+                                    <option value="Food and Beverage Serving Worker">-  Food and Beverage Serving Worker (e.g., Bartender, Waiter, Waitress)</option>
+                                    <option value="Building and Grounds Cleaning and Maintenance">-  Building and Grounds Cleaning and Maintenance</option>
+                                    <option value="Personal Care and Service">-  Personal Care and Service (e.g., Hairdresser, Flight Attendant, Concierge)</option>
+                                    <option value="Sales Supervisor, Retail Sales">-  Sales Supervisor, Retail Sales</option>
+                                    <option value="Retail Sales Worker">-  Retail Sales Worker</option>
+                                    <option value="Insurance Sales Agent">-  Insurance Sales Agent</option>
+                                    <option value="Sales Representative">-  Sales Representative</option>
+                                    <option value="Real Estate Sales Agent">-  Real Estate Sales Agent</option>
+                                    <option value="Other Services Occupation">-  Other Services Occupation</option>
+                                </optgroup>
+                                <optgroup label="Agriculture, Maintenance, Repair, and Skilled Crafts Occupations:">
+                                    <option value="Construction and Extraction">-  Construction and Extraction (e.g., Construction Laborer, Electrician)</option>
+                                    <option value="Farming, Fishing, and Forestry">-  Farming, Fishing, and Forestry</option>
+                                    <option value="Installation, Maintenance, and Repair">-  Installation, Maintenance, and Repair</option>
+                                    <option value="Production Occupations">-  Production Occupations</option>
+                                    <option value="Other Agriculture, Maintenance, Repair, and Skilled Crafts Occupation">-  Other Agriculture, Maintenance, Repair, and Skilled Crafts Occupation</option>
+                                </optgroup>
+                                <optgroup label="Transportation Occupations:">
+                                    <option value="Aircraft Pilot or Flight Engineer">-  Aircraft Pilot or Flight Engineer</option>
+                                    <option value="Motor Vehicle Operator">-  Motor Vehicle Operator (e.g., Ambulance, Bus, Taxi, or Truck Driver)</option>
+                                    <option value="Transportation Occupation">-  Other Transportation Occupation</option>
+                                </optgroup>
+                                <optgroup label="Other Occupations:">
+                                    <option value="Military">-  Military</option>
+                                    <option value="Homemaker">-  Homemaker</option>
+                                    <option value="Other Occupation">-  Other Occupation</option>
+                                </optgroup>
+                            </select>
+                            <img src="./assets/icons/input_select.svg">
+                            <label for="lastname">Occupation</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- --------------------------------- -->
+            <!--------------- FORM 5 ---------------->
+            <!-- --------------------------------- -->
+            <div class="patient__form form-5" id="form-5">
+                <div class="form__status">
+                    <div class="status">
+                        <div class="step-1 active"></div>
+                        <div class="step-2 active"></div>
+                        <div class="step-3 active"></div>
+                        <div class="step-4 active"></div>
+                        <div class="step-5 active"></div>
+                        <div class="step-6 "></div>
+                    </div>
+                </div>
+                <div class="form_container">
+                    <div class="form_group">
+                        <div class="form_wrap">
+                            <input type="text" id="guardian_name" name="guardian_name" placeholder="Enter patient guardian name">
+                            <img src="./assets/icons/user_icon.svg">
+                            <label for="guardian_name">Guardian Name <span>*</span></label>
+                        </div>
+                        <div class="form_wrap">
+                            <input type="number" id="guardian_number" name="guardian_number" placeholder="Enter patient gurdian phone number">
+                            <img src="./assets/icons/input_phone.svg">
+                            <label for="guardian_number">Guardian Phone Number <span>*</span></label>
+                        </div>
+                    </div>
+                    <div class="form_group single_input">
+                        <div class="form_wrap">
+                            <input type="text" id="guardian_address" name="guardian_address" placeholder="Enter patient guardian address">
+                            <img src="./assets/icons/map_marker.svg">
+                            <label for="guardian_name">Gurdian Address <span>*</span></label>
+                        </div>
+                    </div>
+                    <div class="form_group single_input">
+                        <div class="form_wrap">
+                            <select id="relationship" name="relationship">
+                                <option value="" disabled selected>Select relationship</option>
+                                <option value="Family">Family</option>
+                                <option value="Friend">Friend</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <img src="./assets/icons/input_select.svg">
+                            <label for="guardian_name">Relationship <span>*</span></label>
+                        </div>
+                    </div>
+                    <div class="form_group single_input">
+                        <div class="form_wrap">
+                            <input type="text" id="next_kin" name="next_kin" placeholder="Enter patient next of kin">
+                            <img src="./assets/icons/user_icon.svg">
+                            <label for="next_kin">Next of Kin</label>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- --------------------------------- -->
+            <!--------------- FORM 6 ---------------->
+            <!-- --------------------------------- -->
+            <div class="patient__form form-6" id="form-6">
+                <div class="form__status">
+                    <div class="status last">
+                        <div class="step-1 active"></div>
+                        <div class="step-2 active"></div>
+                        <div class="step-3 active"></div>
+                        <div class="step-4 active"></div>
+                        <div class="step-5 active"></div>
+                        <div class="step-6 active"></div>
+                    </div>
+                </div>
+                <div class="form_container patient_img_upload">
+                    <h2>Choose a Patient Photo to Upload</h2>
+                    <p>Only jpeg, jpg and png file are allowed to upload</p>
+                    <div class="upload_area" id="upload_area">
+                        <div class="upload_content">
+                            <img src="./assets/icons/upload.svg" alt="Upload Image Icon">
+                            <h2 id="upload_text">Drag & Drop File Here to Upload</h2>
+                            <span>OR</span>
+                            <button id="img_upload_btn">Click to upload</button>
+                            <input type="file" id="patient_img_upload" hidden>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- --------------------------------- -->
-        <!--------------- FORM 2 ---------------->
-        <!-- --------------------------------- -->
-        <div class="patient__form form-2" id="form-2">
-            <div class="form__status">
-                <div class="status">
-                    <div class="step-1 active"></div>
-                    <div class="step-2 active"></div>
-                    <div class="step-3"></div>
-                    <div class="step-4"></div>
-                    <div class="step-5"></div>
-                </div>
-            </div>
-            <div class="patient_forms">
-                <div class="form_group single_input">
-                    <div class="form_wrap">
-                        <input type="text" id="address" name="address" required placeholder="Enter patient current address">
-                        <img src="./assets/icons/map_marker.svg">
-                        <label for="address">Address</label>
-                    </div>
-                </div>
-                <div class="form_group single_input">
-                    <div class="form_wrap">
-                        <input type="text" id="permanent_address" name="permanent_address" placeholder="Enter patient permanent address">
-                        <img src="./assets/icons/map_marker.svg">
-                        <label for="permanent_address">Permanent Address</label>
-                    </div>
-                </div>
-                <div class="form_group">
-                    <div class="form_wrap">
-                        <select name="state" id="state" required>
-                            <option value="" selected="selected" disabled>Select state of origin </option>
-                            <option value="Abuja">Abuja FCT</option>
-                            <option value="Abia">Abia</option>
-                            <option value="Adamawa">Adamawa</option>
-                            <option value="Akwa Ibom">Akwa Ibom</option>
-                            <option value="Anambra">Anambra</option>
-                            <option value="Bauchi">Bauchi</option>
-                            <option value="Bayelsa">Bayelsa</option>
-                            <option value="Benue">Benue</option>
-                            <option value="Borno">Borno</option>
-                            <option value="Cross River">Cross River</option>
-                            <option value="Delta">Delta</option>
-                            <option value="Ebonyi">Ebonyi</option>
-                            <option value="Edo">Edo</option>
-                            <option value="Ekiti">Ekiti</option>
-                            <option value="Enugu">Enugu</option>
-                            <option value="Gombe">Gombe</option>
-                            <option value="Imo">Imo</option>
-                            <option value="Jigawa">Jigawa</option>
-                            <option value="Kaduna">Kaduna</option>
-                            <option value="Kano">Kano</option>
-                            <option value="Katsina">Katsina</option>
-                            <option value="Kebbi">Kebbi</option>
-                            <option value="Kogi">Kogi</option>
-                            <option value="Kwara">Kwara</option>
-                            <option value="Lagos">Lagos</option>
-                            <option value="Nassarawa">Nassarawa</option>
-                            <option value="Niger">Niger</option>
-                            <option value="Ogun">Ogun</option>
-                            <option value="Ondo">Ondo</option>
-                            <option value="Osun">Osun</option>
-                            <option value="Oyo">Oyo</option>
-                            <option value="Plateau">Plateau</option>
-                            <option value="Rivers">Rivers</option>
-                            <option value="Sokoto">Sokoto</option>
-                            <option value="Taraba">Taraba</option>
-                            <option value="Yobe">Yobe</option>
-                            <option value="Zamfara">Zamfara</option>
-                            <option value="Outside Nigeria">Outside Nigeria</option>
-                          </select>
-                        <img src="./assets/icons/input_select.svg">
-                        <label for="state">State of Origin</label>
-                    </div>
-                    <div class="form_wrap">
-                        <select name="city" id="city">
-                            <option value="" disabled selected>Please select patient state first</option>
-                        </select>
-                        <img src="./assets/icons/input_select.svg">
-                        <label for="city">City</label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- --------------------------------- -->
-        <!--------------- FORM 3 ---------------->
-        <!-- --------------------------------- -->
-        <div class="patient__form" id="form-3">
-            <div class="form__status">
-                <div class="status">
-                    <div class="step-1 active"></div>
-                    <div class="step-2 active"></div>
-                    <div class="step-3 active"></div>
-                    <div class="step-4"></div>
-                    <div class="step-5"></div>
-                </div>
-            </div>
-            <div class="patient_forms">
-                <div class="form_group">
-                    <div class="form_wrap">
-                        <input type="text" id="firstname" name="firstname" required placeholder="Enter patient first name">
-                        <img src="./assets/icons/user_icon.svg">
-                        <label for="firstname">First Name</label>
-                    </div>
-                    <div class="form_wrap">
-                        <input type="text" id="lastname" name="lastname" required placeholder="Enter patient last name">
-                        <img src="./assets/icons/user_icon.svg">
-    
-                        <label for="lastname">Last Name</label>
-                    </div>
-                </div>
-                <div class="form_group">
-                    <div class="form_wrap">
-                        <input type="text" id="firstname" name="firstname" placeholder="Enter patient surname">
-                        <img src="./assets/icons/user_icon.svg">
-                        <label for="firstname">Surname</label>
-    
-                    </div>
-                    <div class="form_wrap">
-                        <select type="text" id="lastname" name="lastname" required>
-                            <option value="" disabled selected>Select patient gender</option>
-                            <option value="Female">Female</option>
-                            <option value="Male">Male</option>
-                        </select>
-                        <img src="./assets/icons/input_select.svg">
-                        <label for="lastname">Gender</label>
-    
-                    </div>
-                </div>
-                <div class="form_group">
-                    <div class="form_wrap">
-                        <input type="email" id="firstname" name="firstname" placeholder="Enter patient email address">
-                        <img src="./assets/icons/input_envelope.svg">
-                        <label for="firstname">Email Address</label>
-                    </div>
-                    <div class="form_wrap">
-                        <input type="number" id="phone" name="phone" required placeholder="Enter patient phone number">
-                        <img src="./assets/icons/input_phone.svg">
-                        <label for="phone">Phone Number</label>
-                    </div>
-                </div>
-                <div class="form_group">
-                    <div class="form_wrap">
-                        <select id="blood" name="blood">
-                            <option value="" selected disabled>Select patient blood group</option>
-                            <option>A Positive</option>
-                            <option>A Negative</option>
-                            <option>A Unknown</option>
-                            <option>B Positive</option>
-                            <option>B Negative</option>
-                            <option>B Unknown</option>
-                            <option>AB Positive</option>
-                            <option>AB Negative</option>
-                            <option>AB Unknown</option>
-                            <option>O Positive</option>
-                            <option>O Negative</option>
-                            <option>O Unknown</option>
-                            <option>Unknown</option>
-                        </select>
-                        <img src="./assets/icons/input_select.svg">
-                        <label for="blood">Bloog Group</label>
-                    </div>
-                    <div class="form_wrap">
-                        <select name="genetype" id="genetype">
-                            <option value="" selected disabled>Select patient genetype</option>
-                            <option>A Positive</option>
-                            <option>A Negative</option>
-                            <option>A Unknown</option>
-                            <option>B Positive</option>
-                            <option>B Negative</option>
-                            <option>B Unknown</option>
-                            <option>AB Positive</option>
-                            <option>AB Negative</option>
-                            <option>AB Unknown</option>
-                            <option>O Positive</option>
-                            <option>O Negative</option>
-                            <option>O Unknown</option>
-                            <option>Unknown</option>
-                        </select>
-                        <label for="genetype">Genetype</label>
-                        <img src="./assets/icons/input_select.svg">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="btn_group">
-        <button class="bck_btn"><img src="./assets/icons/bck_arrow.svg" alt="bck arrow"/>Back</button>
+    </div>  
+    <div class="btn_group" id="btn_container">
+        <button class="prev_btn" id="prev_btn"><img src="./assets/icons/bck_arrow.svg" alt="bck arrow">Back</button>
         <button class="nxt_btn" id="nxt_btn">Continue<img src="./assets/icons/nxt_arrow.svg" alt="nxt arrow"/></button>
     </div>
     <a href="/patient" class="cnl_btn">Cancel Registration</a>
-</div>
+</form>

@@ -6,34 +6,137 @@
     <meta name="theme-color" content="#ffffff">
     <title>Cliniqueplus Dashboard</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <script defer src="https://cdnjs.com/libraries/Chart.js"></script>
+    <!-- <script defer src="https://cdnjs.com/libraries/Chart.js"></script> -->
     <link rel="stylesheet" defer href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
     <script src="https://kit.fontawesome.com/129210617d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/add_patient.css">
     <link rel="stylesheet" href="./styles/media_query.css">
     <link rel="stylesheet" href="./styles/circle.css">
-    <script defer src="./scripts/main.js"></script>
+    <link rel="stylesheet" href="./styles/msg.css">
     <script defer src="./scripts/add_patient.js"></script>
+    <script defer src="./scripts/main.js"></script>
     <script defer src="./scripts/chart.js"></script>
 
 </head>
+<!-- ---------------------- -->
+<!-- --------[MODAL]------- -->
+<!-- ---------------------- -->
+<div class="modal_container">
+    <div class="modal trigger">
+        <div class="modal_content">
+            <h2>First Floor</h2>
+        </div>
+        <div class="modal_content">
+            <h3>ICU</h3>
+        </div>
+        <div class="modal_content">
+            <div class="bed">
+                <div class="bed-1 open">
+                    <span>Open</span>
+                </div>
+                <div class="bed-2 open">
+                    <span>Open</span>
+                </div>
+                <div class="bed-3 filled">
+                    <span>Filled</span>
+                </div>
+                <div class="bed-3 filled">
+                    <span>Filled</span>
+                </div>
+                <div class="bed-4 open">
+                    <span>Open</span>
+                </div>
+            </div>
+        </div>
+        <div class="modal_content">
+            <h3>HDU</h3>
+        </div>
+        <div class="modal_content">
+            <div class="bed">
+                <div class="bed-1 open">
+                    <span>Open</span>
+                </div>
+                <div class="bed-2 open">
+                    <span>Open</span>
+                </div>
+                <div class="bed-3 filled">
+                    <span>Filled</span>
+                </div>
+                <div class="bed-4 open">
+                    <span>Open</span>
+                </div>
+                <div class="bed-5 filled">
+                    <span>Open</span>
+                </div>
+            </div>
+        </div>
+        <div class="modal_content">
+            <h2>Second Floor</h2>
+        </div>
+        <div class="modal_content">
+            <h3>ICU</h3>
+        </div>
+        <div class="modal_content">
+            <div class="bed">
+                <div class="bed-1 open">
+                    <span><img src="./assets/icons/bed.svg" alt=""> Open</span>
+                </div>
+                <div class="bed-2 open">
+                    <span>Open</span>
+                </div>
+                <div class="bed-3 filled">
+                    <span>Filled</span>
+                </div>
+                <div class="bed-3 filled">
+                    <span>Filled</span>
+                </div>
+                <div class="bed-4 open">
+                    <span>Open</span>
+                </div>
+            </div>
+        </div>
+        <div class="modal_content">
+            <h3>HDU</h3>
+        </div>
+        <div class="modal_content">
+            <div class="bed">
+                <div class="bed-1 open">
+                    <span>Open</span>
+                </div>
+                <div class="bed-2 open">
+                    <span>Open</span>
+                </div>
+                <div class="bed-3 filled">
+                    <span>Filled</span>
+                </div>
+                <div class="bed-4 open">
+                    <span>Open</span>
+                </div>
+                <div class="bed-5 filled">
+                    <span>Open</span>
+                </div>
+            </div>
+        </div>
+        <div class="modal_content"></div>
+    </div>
+</div>
 <body>
     <div class="root">
-        <div class="left_panel" id="left_toggle">
+        <div class="left_panel night-color" id="left_toggle">
             <div class="brand__logo" id="brand_logo">
                 <div class="logo">
                     <img src="./assets/images/logo__brand.png" alt="" srcset="">
                 </div>
-                <h3 id="logo__content">FakeDocs</h3>
+                <h3 id="logo__content" class="theme_text">FakeDocs</h3>
             </div>
             <div class="primary-btn">
                 <a href="#">
                     <div class="btn" id="primary_btn">
-                        <a href="/add_patient" id="btn__content">Register Patient</a>
-                        <img src="./assets/icons/plus.svg" alt="" srcset="">
+                        <a href="/add_patient" id="btn__content">Bed Status</a>
+                        <img src="./assets/icons/status.svg" alt="" srcset="">
                     </div>
                 </a>
             </div>
@@ -46,14 +149,14 @@
                     <li><a href="#">Call Logs</a></li>
                     <li><a href="#">Postal</a></li>
                 </ul>
-                <li class="nav_list" id="nav_list"><img src="./assets/icons/HIS.svg" alt=""><a id="nav_link" class="nav_link" href="#">HIS <img class="drop__arr" id="drop__arr" src="./assets/icons/front-arrow.svg" alt=""></a></li>
+                <li class="nav_list" id="nav_list"><img src="./assets/icons/stethoscope.svg" alt=""><a id="nav_link" class="nav_link" href="#">HIS <img class="drop__arr" id="drop__arr" src="./assets/icons/front-arrow.svg" alt=""></a></li>
                 <ul class="drop__nav" id="drop__nav">
                     <li><a href="#">OPD</a></li>
                     <li><a href="#">IPD</a></li>
                     <li><a href="#">ICU</a></li>
                     <li><a href="#">Operation Theatre</a></li>
-                    <li><a href="#">Blood Bank</a></li>
                 </ul>
+                <li class="nav_list" id="nav_list"><img src="./assets/icons/blood.svg" alt=""><a id="nav_link" class="nav_link" href="#">Blood Bank</a></li>
                 <li class="nav_list" id="nav_list"><img src="./assets/icons/LIS.svg" alt=""><a id="nav_link" class="nav_link" href="#">LIS <img class="drop__arr" id="drop__arr" src="./assets/icons/front-arrow.svg" alt=""></a></li>
                 <ul class="drop__nav" id="drop__nav">
                     <li><a href="#">Order</a></li>
@@ -72,28 +175,29 @@
                 <li class="nav_list" id="nav_list"><img class="nav__icon" src="./assets/icons/8.svg" alt=""><a id="nav_link" class="nav_link" href="#">Admin <img class="drop__arr" id="drop__arr" src="./assets/icons/front-arrow.svg" alt=""></a></li>
                 <ul class="drop__nav" id="drop__nav">
                     <li><a href="#">HR</a></li>
+                    <li><a href="#">Inventory</a></li>
                 </ul>
                 <li class="nav_list" id="nav_list"><img class="nav__icon" src="./assets/icons/records.svg" alt=""><a id="nav_link" class="nav_link" href="#">Records <img class="drop__arr" id="drop__arr" src="./assets/icons/front-arrow.svg" alt=""></a></li>
                 <ul class="drop__nav" id="drop__nav">
                     <li><a href="/add_patient">Add Patient</a></li>
                     <li><a href="#">HMO</a></li>
-                    <li><a href="#">Insurence</a></li>
+                    <li><a href="#">Insurance</a></li>
                     <li><a href="#">Coding & Indexing</a></li>
                     <li><a href="#">All Patients</a></li>
                 </ul>
-                <li class="nav_list" id="nav_list"><img class="nav__icon" src="./assets/icons/10.svg" alt=""><a id="nav_link" class="nav_link" href="#">Logistics <img class="drop__arr" id="drop__arr" src="" alt=""></a></li> 
+                <li class="nav_list" id="nav_list"><img class="nav__icon" src="./assets/icons/ambulance.svg" alt=""><a id="nav_link" class="nav_link" href="#">Logistics <img class="drop__arr" id="drop__arr" src="" alt=""></a></li> 
             </ul>
         </div>
         <!-- <ul class="nav__footer">
             <li><img src="./assets/icons/help.svg" alt=""><a id="nav_link" href="#">Help?</a></li>
         </ul> -->
-        <div class="top_panel">
+        <div class="top_panel night-color">
             <div class="cola" id="cola">
                 <img src="./assets/icons/cola.svg" alt="">
             </div>
             <div class="brand__logo-mobile">
                 <img src="./assets/images/logo__brand.png" alt="" class="img__mobile">
-                <h3 id="logo__content">FakeDocs</h3>
+                <h3 id="logo__content" class="theme_text">FakeDocs</h3>
             </div>
             <!-- <div class="user_sniper-mobile">
                 <div class="avatar" id="user__snippet__arr">
@@ -115,7 +219,7 @@
                               alt="a cute kitten">
                           </picture>
                     </div>
-                    <input type="text" placeholder="Search for patient">
+                    <input type="text" id="search_input" placeholder="Search for patient">
                 </form>
             </div>
             <div class="user_sniper">
@@ -257,7 +361,7 @@
                     </div>
                 </button>
                 <div class="username">
-                    <h3>Samson Monday</h3>
+                    <h3 class="theme_text">Samson Monday</h3>
                 </div>
                 <!-- <div class="drop_arr" id="user__snippet__arr">
                     <img src="./assets/icons/28.svg" alt="" srcset="">
@@ -309,7 +413,7 @@
                 </button>
             </div>
         </div>
-        <div class="theme__color" id="theme__color"><img class="nav__icon" src="./assets/icons/10.svg" alt=""></div>
+        <div class="theme__color" id="theme_changer"><img class="nav__icon" src="./assets/icons/10.svg" alt=""></div>
             
             <div class="content">
                 <%- body %>

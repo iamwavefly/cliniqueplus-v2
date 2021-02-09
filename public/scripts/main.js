@@ -3,20 +3,21 @@ const btnContent = document.querySelector("#btn__content")
 const logoContent = document.querySelector("#logo__content") 
 const primaryBtn = document.querySelector("#primary_btn") 
 const brandLogo = document.querySelector("#brand_logo") 
+const searchInput = document.querySelector("#search_input")
 const leftToggle = document.querySelector("#left_toggle")
 const cola = document.querySelector("#cola")
 const navLink = document.querySelectorAll("#nav_link")
+const a_tag = document.querySelectorAll("a")
 const navbar = document.querySelectorAll("#navbar") 
 const navbarList = document.querySelectorAll("#nav_list") 
 const dropNav = document.querySelectorAll("#drop__nav") 
 const dropArr = document.querySelectorAll("#drop__arr") 
-// const snippetDrop = document.querySelectorAll("#user__snippet__arr") 
-// const userSnippetPanel = document.querySelector("#user__snippet__panel") 
 const hamburger = document.querySelector("#hamburger") 
 const MsgCont = document.querySelectorAll("#MsgCont") 
 const msgContent = document.querySelectorAll("#msgContent") 
-const themeColor = document.querySelector("#theme__color") 
-const themeText = document.querySelector("#theme__text") 
+const  themeChanger = document.querySelector("#theme_changer") 
+const  nightColor = document.querySelectorAll(".night-color") 
+const themeText = document.querySelectorAll(".theme_text") 
 // Functions
 
 dropNav.forEach(drop => {
@@ -73,7 +74,6 @@ navbarList.forEach((nav, index) => {
 //     })
 // }
 const msgShower = (msg, index) => {
-    console.log(index);
     msg.addEventListener("click", () => {
         msgContent[index].classList.toggle("show__msg")
     })
@@ -82,14 +82,18 @@ const showBox = (message) => {
     message.forEach(msgShower)
 }
 
-themeColor.addEventListener("click", ()=> {
-    leftToggle.classList.toggle("night__theme")
-
-    if(themeText.innerHTML === "Night Mode"){
-        themeText.innerHTML = "Light Mode"
-    }  else {
-        themeText.innerHTML = "Night Mode"
-    }
+themeChanger.addEventListener("click", ()=> {
+    nightColor.forEach(cb => {
+        themeText.forEach(txt => {
+            a_tag.forEach(a => {
+                a.classList.toggle("theme_text-color")
+                cb.classList.toggle("night_theme")
+                txt.classList.toggle("theme_text-color")
+                document.body.classList.toggle("night_theme-bg")
+                searchInput.classList.toggle("plc")
+            })
+        })
+    })
 })
 
 showBox(MsgCont)
